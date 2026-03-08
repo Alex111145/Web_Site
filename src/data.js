@@ -14,12 +14,18 @@ import Tools3 from "/assets/tools/java.png";       // Esiste già        // DA A
 import Tools4 from "/assets/tools/python.png";  // DA AGGIUNGERE: python-java.png
 import Tools5 from "/assets/tools/mysql.png";        // Uso l'icona mysql.png che hai già per SQL
 import Tools6 from "/assets/tools/ngrok.png";        // DA AGGIUNGERE: ngrok.png
-import Tools7 from "/assets/tools/crypto.png";       // DA AGGIUNGERE: crypto.png
-import Tools8 from "/assets/tools/docker.png";       // DA AGGIUNGERE: docker.png
-import Tools9 from "/assets/tools/agisoft.png";      // DA AGGIUNGERE: agisoft.png
+import Tools7 from "/assets/tools/crypto.png";       // DA AGGIUNGERE: crypto.png      // DA AGGIUNGERE: docker.png
+import Tools8 from "/assets/tools/agisoft.png";  
+import Tools9 from "/assets/tools/pix4d.png";     // DA AGGIUNGERE: agisoft.png
 import Tools10 from "/assets/tools/ai.png";          // Esiste già, perfetta per Instance Segmentation
-import Tools11 from "/assets/tools/yolo.png";        // DA AGGIUNGERE: yolo.png
-import Tools12 from "/assets/tools/pix4d.png";     
+import Tools11 from "/assets/tools/yolo.png";        // DA AGGIUNGERE: yolo.png   
+import Cert1 from "/assets/cert/challenge.png"; 
+import Cert2 from "/assets/cert/b2.png"; 
+import Cert3 from "/assets/cert/a1a3.png"; 
+import Cert4 from "/assets/cert/aws1.png";
+import Cert5 from "/assets/cert/kub.png";
+import Cert6 from "/assets/cert/docker.png";
+import Cert7 from "/assets/cert/google.png";
 export const listTools = [
   {
     id: 1,
@@ -39,15 +45,13 @@ export const listTools = [
     id: 3,
     gambar: Tools3,
     nama: "Java",
-    ket: "Programming Language",
+    ket: "Languages",
     dad: "300",
   },
-
- 
   {
     id: 4,
     gambar: Tools4,
-    nama: "Python - Java",
+    nama: "Python",
     ket: "Languages",
     dad: "400",
   },
@@ -72,19 +76,20 @@ export const listTools = [
     ket: "Security",
     dad: "700",
   },
+  
   {
     id: 8,
     gambar: Tools8,
-    nama: "Docker",
-    ket: "DevOps",
-    dad: "800",
-  },
-  {
-    id: 9,
-    gambar: Tools9,
-    nama: "Agisoft Metashape - Pix4Dmapper",
+    nama: "Agisoft Metashape",
     ket: "Photogrammetry Software",
     dad: "900",
+  },
+   {
+    id: 9,
+    gambar: Tools9,
+    nama: "Pix4Dmapper",
+    ket: "Photogrammetry Software",
+    dad: "1200",
   },
   {
     id: 10,
@@ -100,16 +105,10 @@ export const listTools = [
     ket: "AI Model",
     dad: "1100",
   },
-  {
-    id: 12,
-    gambar: Tools12,
-    nama: "Pix4Dmapper",
-    ket: "Photogrammetry Software",
-    dad: "1200",
-  }
+ 
 ];
 
-// --- SEZIONE PROGETTI (Rimasta invariata) ---
+// --- SEZIONE PROGETTI ---
 import Proyek1 from "/assets/proyek/proyek1.jpg";
 import Proyek2 from "/assets/proyek/proyek2.jpg";
 import Proyek3 from "/assets/proyek/proyek3.jpg";
@@ -184,4 +183,58 @@ export const listProyek = [
     url: "https://github.com/rissss21",
     dad: "600",
   },
+];
+
+// --- SEZIONE CERTIFICATIONS ---
+export const listCertifications = [
+
+  {
+    id: 1,
+    gambar: Cert7, 
+    nama: "Google Cloud ML",
+    ket: "Professional Engineer",
+    dad: "100",
+  },
+  {
+    id: 2,
+    gambar: Cert4, 
+    nama: "AWS Machine Learning",
+    ket: "Specialty Certification",
+    dad: "200",
+  },
+  {
+    id: 3,
+    gambar: Cert6, 
+    nama: "Docker",
+    ket: "DevOps Certification",
+    dad: "300",
+  },
+  {
+    id: 4,
+    gambar: Cert5, 
+    nama: "Kubernetes",
+    ket: "Container Orchestration",
+    dad: "400",
+  },
+  {
+    id: 5,
+    gambar: Cert3, 
+    nama: "A1/A3 Open Category",
+    ket: "UAS/Drone Pilot License",
+    dad: "500",
+  },
+  {
+    id: 6,
+    gambar: Cert2, 
+    nama: "B2 English",
+    ket: "Language Certification",
+    dad: "600",
+  },
+  {
+    id: 7,
+    gambar: Cert1, 
+    nama: "Coding Challenge",
+    ket: "Achievement / Award",
+    dad: "700",
+  }
 ];
