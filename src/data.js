@@ -1,8 +1,3 @@
-import HeroImage from "/assets/hero-img.webp";
-
-const Image = {
-  HeroImage,
-};
 
 export default Image;
 
@@ -18,7 +13,8 @@ import Tools8 from "/assets/tools/agisoft.png";
 import Tools9 from "/assets/tools/pix4d.png";     
 import Tools10 from "/assets/tools/ai.png";          
 import Tools11 from "/assets/tools/yolo.png";        
-
+import Tools12 from "/assets/tools/js.png"; 
+import Tools13 from "/assets/tools/css.png";
 import Cert1 from "/assets/cert/challenge.png"; 
 import Cert2 from "/assets/cert/b2.png"; 
 import Cert3 from "/assets/cert/a1a3.png"; 
@@ -32,6 +28,8 @@ export const listTools = [
   { id: 2, gambar: Tools2, nama: "GitHub", ket: "Repository", dad: "200" },
   { id: 3, gambar: Tools3, nama: "Java", ket: "Languages", dad: "300" },
   { id: 4, gambar: Tools4, nama: "Python", ket: "Languages", dad: "400" },
+  { id: 12, gambar: Tools12, nama: "JavaScript", ket: "Web Language", dad: "450" }, 
+  { id: 13, gambar: Tools13, nama: "CSS", ket: "Styling", dad: "480" },            
   { id: 5, gambar: Tools5, nama: "SQL", ket: "Database", dad: "500" },
   { id: 6, gambar: Tools6, nama: "Ngrok", ket: "Network Tool", dad: "600" },
   { id: 7, gambar: Tools7, nama: "Cryptography", ket: "Security", dad: "700" },
@@ -98,7 +96,7 @@ export const listProyek = [
 export const listCertifications = [
   { id: 1, gambar: Cert7, nama: "Google Cloud ML", ket: "Professional Engineer", anno: "2026", dad: "100" },
   { id: 2, gambar: Cert4, nama: "AWS Machine Learning", ket: "Specialty Certification", anno: "2026", dad: "200" },
- { id: 3, gambar: Cert6, nama: "Docker", ket: "DevOps Certification", anno: "2026", dad: "400" },
+  { id: 3, gambar: Cert6, nama: "Docker", ket: "DevOps Certification", anno: "2026", dad: "400" },
   { id: 4, gambar: Cert5, nama: "Kubernetes", ket: "Container Orchestration", anno: "2026", dad: "500" },
   { id: 5, gambar: Cert3, nama: "A1/A3 Open Category", ket: "UAS/Drone Pilot License", anno: "2026", dad: "600" },
   { id: 6, gambar: Cert2, nama: "B2 English", ket: "Language Certification", anno: "2025", dad: "700" },
