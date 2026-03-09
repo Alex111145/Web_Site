@@ -23,6 +23,7 @@ function App() {
 
   useEffect(() => {
     const isReload = performance.getEntriesByType("navigation")[0]?.type === "reload";
+    // Rimosso il redirect forzato a /portofolio/ per evitare errori di refresh
     if (isReload) { window.location.replace(window.location.origin + "/Web_Site/"); }
   }, []);
 
@@ -97,9 +98,9 @@ function App() {
             {listTools.map((tool) => (
               <div key={tool.id} className="flex items-center gap-4 p-4 border border-zinc-700 rounded-xl bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-800 transition-all shadow-lg" data-aos="fade-up" data-aos-delay={tool.dad}>
                 <img src={tool.gambar} alt={tool.nama} className="w-16 h-16 object-contain bg-zinc-800 p-2 rounded-lg" />
-                <div className="overflow-hidden">
-                  <ShinyText text={tool.nama} speed={3} className="text-lg font-semibold block truncate" />
-                  <p className="text-sm text-zinc-400 truncate">{tool.ket}</p>
+                <div className="flex flex-col min-w-0">
+                  <ShinyText text={tool.nama} speed={3} className="text-lg font-semibold leading-tight" />
+                  <p className="text-sm text-zinc-400 leading-snug break-words">{tool.ket}</p>
                 </div>
               </div>
             ))}
@@ -113,9 +114,9 @@ function App() {
             {listCertifications.map((cert) => (
               <div key={cert.id} className="flex items-center gap-4 p-4 border border-zinc-700 rounded-xl bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-800 transition-all shadow-lg" data-aos="fade-up" data-aos-delay={cert.dad}>
                 <img src={cert.gambar} alt={cert.nama} className="w-16 h-16 object-contain bg-zinc-800 p-2 rounded-lg" />
-                <div className="overflow-hidden">
-                  <ShinyText text={cert.nama} speed={3} className="text-lg font-semibold block truncate" />
-                  <p className="text-sm text-zinc-400 truncate">{cert.ket} • <span className="text-violet-400">{cert.anno}</span></p>
+                <div className="flex flex-col min-w-0">
+                  <ShinyText text={cert.nama} speed={3} className="text-lg font-semibold leading-tight" />
+                  <p className="text-sm text-zinc-400 leading-snug break-words">{cert.ket} • <span className="text-violet-400">{cert.anno}</span></p>
                 </div>
               </div>
             ))}
