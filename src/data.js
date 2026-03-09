@@ -1,5 +1,3 @@
-
-
 export default Image;
 
 // --- IMPORTAZIONE DELLE ICONE DEGLI STRUMENTI ---
@@ -19,15 +17,21 @@ import Tools13 from "/assets/tools/css.png";
 import Tools14 from "/assets/tools/robo.png"; 
 import Tools15 from "/assets/tools/rete.png"; 
 
+// --- IMPORTAZIONE LOGHI CERTIFICATI (Icone) ---
 import Cert1 from "/assets/cert/challenge.png"; 
 import Cert2 from "/assets/cert/b2.png"; 
 import Cert3 from "/assets/cert/a1a3.png"; 
-import Cert8 from "/assets/cert/aws1.png";
-import Cert9 from "/assets/cert/aws2.png";
 import Cert4 from "/assets/cert/aws3.png";
 import Cert5 from "/assets/cert/kub.png";
 import Cert6 from "/assets/cert/docker.png";
 import Cert7 from "/assets/cert/google.png";
+import Cert8 from "/assets/cert/aws1.png";
+import Cert9 from "/assets/cert/aws2.png";
+
+
+
+import fullCert1 from "/assets/certificati/inglese.png"; 
+import fullCert2 from "/assets/certificati/drone.png"; 
 
 
 export const listTools = [
@@ -48,12 +52,11 @@ export const listTools = [
   { id: 11, gambar: Tools11, nama: "Yolov26", ket: "AI Model", dad: "1100" },
 ];
 
-// --- SEZIONE PROGETTI (In ordine cronologico decrescente) ---
+// --- SEZIONE PROGETTI ---
 import Project1 from "/assets/project/solar.png"; 
 import Project2 from "/assets/project/super.png"; 
 import Project3 from "/assets/project/artigiano.png"; 
 import Project4 from "/assets/project/biblo.png"; 
-
 
 export const listProyek = [
   {
@@ -62,7 +65,7 @@ export const listProyek = [
     title: "Solar Panel Detection",
     subtitle: "A Computer Vision project using advanced AI models...",
     fullDescription: "This project implements a high-precision instance segmentation framework for solar energy monitoring. Utilizing multispectral aerial datasets acquired via UAVs (Unmanned Aerial Vehicles) equipped with thermal infrared (LWIR) sensors, we deployed the MaskDINO foundational model to automate the detection and pixel-level segmentation of solar panels. This integration enables thermal anomaly detection, such as identifying hotspots and bypassed strings, allowing for granular health assessment and predictive maintenance of large-scale photovoltaic arrays.",
-     anno: "Present",
+    anno: "Present",
     borderColor: "#F59E0B",
     gradient: "linear-gradient(145deg, #F59E0B, #000)",
     url: "https://github.com/Alex111145/Solar_Panel/tree/dino(nvidia2)",
@@ -92,7 +95,7 @@ export const listProyek = [
     url: "https://github.com/Alex111145/ArtigianatoOnline",
     dad: "300",
   },
-   {
+  {
     id: 4,
     image: Project4,
     title: "Book Recommender System",
@@ -104,19 +107,17 @@ export const listProyek = [
     url: "https://github.com/Alex111145/BookRecommender",
     dad: "400",
   }
-  
 ];
 
-// --- SEZIONE CERTIFICATIONS (In ordine cronologico decrescente) ---
+// --- SEZIONE CERTIFICATIONS ---
 export const listCertifications = [
-  { id: 1, gambar: Cert7, nama: "Google Cloud ML", ket: "Professional Engineer", anno: "2026", dad: "100" },
-  { id: 2, gambar: Cert4, nama: "AWS Machine Learning", ket: "Specialty Certification", anno: "2026", dad: "200" },
-   { id: 9, gambar: Cert9, nama: "AWS Machine Learning Engineer", ket: "Associate Certification", anno: "2026", dad: "900" },
-  { id: 8, gambar: Cert8, nama: "AWS Certified AI Practitioner", ket: "Foundational Certification", anno: "2026", dad: "800" },
-  { id: 3, gambar: Cert6, nama: "Docker", ket: "DevOps Certification", anno: "2026", dad: "300" },
-  { id: 4, gambar: Cert5, nama: "Kubernetes", ket: "Container Orchestration", anno: "2026", dad: "400" },
-  { id: 5, gambar: Cert3, nama: "A1/A3 Open Category", ket: "UAS/Drone Pilot License", anno: "2026", dad: "500" },
-  { id: 6, gambar: Cert2, nama: "B2 English", ket: "Language Certification", anno: "2025", dad: "600" },
-  { id: 7, gambar: Cert1, nama: "Coding Challenge", ket: "Achievement / Award", anno: "2023", dad: "700" },
-
+  { id: 1, gambar: Cert7, certImage: null, nama: "Google Cloud ML", ket: "Professional Engineer", anno: "2026", dad: "100" },
+  { id: 2, gambar: Cert4, certImage: null, nama: "AWS Machine Learning", ket: "Specialty Certification", anno: "2026", dad: "200" },
+  { id: 9, gambar: Cert9, certImage: null, nama: "AWS Machine Learning Engineer", ket: "Associate Certification", anno: "2026", dad: "900" },
+  { id: 8, gambar: Cert8, certImage: null, nama: "AWS Certified AI Practitioner", ket: "Foundational Certification", anno: "2026", dad: "800" },
+  { id: 3, gambar: Cert6, certImage: null, nama: "Docker", ket: "DevOps Certification", anno: "2026", dad: "300" },
+  { id: 4, gambar: Cert5, certImage: null, nama: "Kubernetes", ket: "Container Orchestration", anno: "2026", dad: "400" },
+  { id: 5, gambar: Cert3, certImage: fullCert2, nama: "A1/A3 Open Category", ket: "UAS/Drone Pilot License", anno: "2026", dad: "500" },
+  { id: 6, gambar: Cert2, certImage: fullCert1, nama: "B2 English", ket: "Language Certification", anno: "2025", dad: "600" },
+  { id: 7, gambar: Cert1, certImage: null, nama: "Coding Challenge", ket: "Achievement / Award", anno: "2023", dad: "700" },
 ];

@@ -8,6 +8,7 @@ import GlassIcons from "./components/GlassIcons/GlassIcons";
 import { listTools, listProyek, listCertifications } from "./data";
 import ChromaGrid from "./components/ChromaGrid/ChromaGrid";
 import ProjectModal from "./components/ProjectModal/ProjectModal"; 
+import CertModal from "./components/CertModal/CertModal"; // Aggiunto import del CertModal
 import Aurora from "./components/Aurora/Aurora";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
@@ -16,10 +17,16 @@ AOS.init();
 
 function App() {
   const aboutRef = useRef(null);
+  
+  // State per i Progetti
   const [selectedProject, setSelectedProject] = useState(null); 
-
   const handleProjectClick = (project) => { setSelectedProject(project); };
   const handleCloseModal = () => { setSelectedProject(null); };
+
+  // State per i Certificati
+  const [selectedCert, setSelectedCert] = useState(null); 
+  const handleCertClick = (cert) => { setSelectedCert(cert); };
+  const handleCloseCertModal = () => { setSelectedCert(null); };
 
   useEffect(() => {
     const isReload = performance.getEntriesByType("navigation")[0]?.type === "reload";
@@ -116,11 +123,19 @@ function App() {
           <h1 className="text-4xl font-bold mb-4" data-aos="fade-up">Certifications</h1>
           <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 mt-14">
             {listCertifications.map((cert) => (
-              <div key={cert.id} className="flex items-center gap-4 p-4 border border-zinc-700 rounded-xl bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-800 transition-all shadow-lg" data-aos="fade-up" data-aos-delay={cert.dad}>
+              <div 
+                key={cert.id} 
+                onClick={() => handleCertClick(cert)} 
+                className="cursor-pointer flex items-center gap-4 p-4 border border-zinc-700 rounded-xl bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-800 hover:scale-[1.02] transition-all shadow-lg" 
+                data-aos="fade-up" 
+                data-aos-delay={cert.dad}
+              >
                 <img src={cert.gambar} alt={cert.nama} className="w-16 h-16 object-contain bg-zinc-800 p-2 rounded-lg" />
                 <div className="flex flex-col min-w-0">
                   <ShinyText text={cert.nama} speed={3} className="text-lg font-semibold leading-tight" />
-                  <p className="text-sm text-zinc-400 leading-snug break-words">{cert.ket} • <span className="text-violet-400">{cert.anno}</span></p>
+                  <p className="text-sm text-zinc-400 leading-snug break-words">
+                    {cert.ket} • <span className="text-violet-400">{cert.certImage ? cert.anno : "Soon..."}</span>
+                  </p>
                 </div>
               </div>
             ))}
@@ -168,6 +183,8 @@ function App() {
         </div>
       </main>
       <ProjectModal isOpen={!!selectedProject} onClose={handleCloseModal} project={selectedProject} />
+      {/* Modale delle Certificazioni */}
+      <CertModal isOpen={!!selectedCert} onClose={handleCloseCertModal} cert={selectedCert} />
     </>
   );
 }
