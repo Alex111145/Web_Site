@@ -23,7 +23,7 @@ function App() {
 
   useEffect(() => {
     const isReload = performance.getEntriesByType("navigation")[0]?.type === "reload";
-    if (isReload) { window.location.replace(window.location.origin + "/portofolio/"); }
+    if (isReload) { window.location.replace(window.location.origin + "/Web_Site/"); }
   }, []);
 
   return (
@@ -83,7 +83,7 @@ function App() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
             <BlurText text="Computer Science student at the University of Insubria, focusing on AI, Machine Learning, and Cybersecurity." delay={150} className="text-lg leading-relaxed mb-12 text-gray-300 max-w-4xl mx-auto" />
             <div className="flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-20 mb-8 w-full">
-              <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">4<span className="text-violet-500">+</span></h1><p className="text-gray-400">Project Finished</p></div>
+              <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">3<span className="text-violet-500">+</span></h1><p className="text-gray-400">Project Finished</p></div>
               <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">5<span className="text-violet-500">+</span></h1><p className="text-gray-400">Years of Experience</p></div>
             </div>
             <ShinyText text="From data noise to intelligent choices." speed={3} className="text-lg font-medium text-violet-400 mt-4" />
