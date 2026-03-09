@@ -34,11 +34,10 @@ const CertModal = ({ isOpen, onClose, cert }) => {
         onClick={(e) => e.stopPropagation()}
         className={`bg-zinc-900 border border-violet-500/50 rounded-2xl shadow-2xl shadow-violet-500/20 w-full max-w-4xl transform transition-transform duration-300 flex flex-col max-h-[95vh] ${isClosing ? 'animate-out' : 'animate-in'}`}
       >
-        {/* Header con Titolo, Dettagli e Bottone Chiusura */}
+        {/* Header */}
         <div className="p-5 flex justify-between items-start border-b border-zinc-800">
           <div>
             <h2 className="text-2xl font-bold text-white">{cert.nama}</h2>
-            {/* QUI HO MODIFICATO L'ANNO CON LA CONDIZIONE "SOON..." */}
             <p className="text-zinc-400 text-sm mt-1">
               {cert.ket} • <span className="text-violet-400">{cert.certImage ? cert.anno : "Soon..."}</span>
             </p>
@@ -51,7 +50,7 @@ const CertModal = ({ isOpen, onClose, cert }) => {
           </button>
         </div>
 
-        {/* Immagine Certificato o Scritta "Soon..." */}
+        {/* Content */}
         <div className="p-6 overflow-auto flex justify-center items-center bg-black/40 rounded-b-2xl min-h-[300px]">
           {cert.certImage ? (
             <img 

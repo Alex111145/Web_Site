@@ -1,5 +1,3 @@
-export default Image;
-
 // --- IMPORTAZIONE DELLE ICONE DEGLI STRUMENTI ---
 import Tools1 from "/assets/tools/vscode.png";       
 import Tools2 from "/assets/tools/github.png";  
@@ -17,7 +15,7 @@ import Tools13 from "/assets/tools/css.png";
 import Tools14 from "/assets/tools/robo.png"; 
 import Tools15 from "/assets/tools/rete.png"; 
 
-// --- IMPORTAZIONE LOGHI CERTIFICATI (Icone) ---
+// --- IMPORTAZIONE LOGHI CERTIFICATI (Icone Griglia) ---
 import Cert1 from "/assets/cert/challenge.png"; 
 import Cert2 from "/assets/cert/b2.png"; 
 import Cert3 from "/assets/cert/a1a3.png"; 
@@ -28,11 +26,11 @@ import Cert7 from "/assets/cert/google.png";
 import Cert8 from "/assets/cert/aws1.png";
 import Cert9 from "/assets/cert/aws2.png";
 
-
-
+// --- IMPORTAZIONE IMMAGINI CERTIFICATI (Full Size per Modal) ---
 import fullCert1 from "/assets/certificati/inglese.png"; 
 import fullCert2 from "/assets/certificati/drone.png"; 
 import fullCert3 from "/assets/certificati/cyber.png"; 
+
 export const listTools = [
   { id: 1, gambar: Tools1, nama: "Visual Studio", ket: "Code Editor", dad: "100" },
   { id: 2, gambar: Tools2, nama: "GitHub", ket: "Repository", dad: "200" },
@@ -63,7 +61,7 @@ export const listProyek = [
     image: Project1,
     title: "Solar Panel Detection",
     subtitle: "A Computer Vision project using advanced AI models...",
-    fullDescription: "This project implements a high-precision instance segmentation framework for solar energy monitoring. Utilizing multispectral aerial datasets acquired via UAVs (Unmanned Aerial Vehicles) equipped with thermal infrared (LWIR) sensors, we deployed the MaskDINO foundational model to automate the detection and pixel-level segmentation of solar panels. This integration enables thermal anomaly detection, such as identifying hotspots and bypassed strings, allowing for granular health assessment and predictive maintenance of large-scale photovoltaic arrays.",
+    fullDescription: "This project implements a high-precision instance segmentation framework for solar energy monitoring. Utilizing multispectral aerial datasets acquired via UAVs...",
     anno: "Present",
     borderColor: "#F59E0B",
     gradient: "linear-gradient(145deg, #F59E0B, #000)",
@@ -75,7 +73,7 @@ export const listProyek = [
     image: Project2,
     title: "Image Super Resolution",
     subtitle: "A Deep Learning model designed to upscale and enhance image quality...",
-    fullDescription: "This project explores advanced Deep Learning architectures for Single Image Super-Resolution (SISR). By leveraging the HAT (Hybrid Attention Transformer) model and Swin Transformer blocks, the system captures both long-range dependencies and local image features. Integrated into a Generative Adversarial Network (GAN) pipeline, the model suppresses artifacts and reconstructs realistic high-frequency details that traditional interpolation methods cannot recover.",
+    fullDescription: "This project explores advanced Deep Learning architectures for Single Image Super-Resolution (SISR)...",
     anno: "2026",
     borderColor: "#8B5CF6",
     gradient: "linear-gradient(145deg, #8B5CF6, #000)",
@@ -87,7 +85,7 @@ export const listProyek = [
     image: Project3,
     title: "Artigianato Online",
     subtitle: "An e-commerce web platform dedicated to local artisans...",
-    fullDescription: "A full-stack web application built to support local artisans by providing them with a dedicated e-commerce platform. It features a user-friendly interface for browsing unique handcrafted items, a secure checkout process, and an intuitive dashboard for sellers to easily manage their inventory and orders.",
+    fullDescription: "A full-stack web application built to support local artisans by providing them with a dedicated e-commerce platform...",
     anno: "2025",
     borderColor: "#10B981",
     gradient: "linear-gradient(180deg, #10B981, #000)",
@@ -99,7 +97,7 @@ export const listProyek = [
     image: Project4,
     title: "Book Recommender System",
     subtitle: "A recommendation engine for book enthusiasts...",
-    fullDescription: "A recommendation system that suggests books to users by analyzing reading patterns, ratings, and preferences. Using collaborative filtering and content-based approaches, it delivers highly personalized reading lists to enhance the user experience and discoverability.",
+    fullDescription: "A recommendation system that suggests books to users by analyzing reading patterns...",
     anno: "2024",
     borderColor: "#3B82F6",
     gradient: "linear-gradient(145deg, #3B82F6, #000)",
@@ -118,6 +116,5 @@ export const listCertifications = [
   { id: 4, gambar: Cert5, certImage: null, nama: "Kubernetes", ket: "Container Orchestration", anno: "2026", dad: "400" },
   { id: 5, gambar: Cert3, certImage: fullCert2, nama: "A1/A3 Open Category", ket: "UAS/Drone Pilot License", anno: "2026", dad: "500" },
   { id: 6, gambar: Cert2, certImage: fullCert1, nama: "B2 English", ket: "Language Certification", anno: "2025", dad: "600" },
-  
   { id: 7, gambar: Cert1, certImage: fullCert3, nama: "Coding Challenge", ket: "Achievement / Award", anno: "2024", dad: "700" },
 ];
