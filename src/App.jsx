@@ -68,8 +68,12 @@ function App() {
           <div className="md:ml-auto animate__animated animate__fadeInUp animate__delay-4s">
             {/* MODIFICATA LA PROP NAME PER ANDARE SU DUE RIGHE */}
             <ProfileCard 
-              name={<>Alessio<br />Gervasini</>} 
-              title="Machine Learning Specialist" 
+             name={
+    <span className="font-serif font-bold tracking-tight leading-none text-black">
+      Alessio<br />Gervasini
+    </span>
+  } 
+  title="Machine Learning Specialist"
               handle="alessiogervasini" 
               status="Online" 
               avatarUrl="./assets/alessio.png" 
