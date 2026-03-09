@@ -32,8 +32,7 @@ import Cert9 from "/assets/cert/aws2.png";
 
 import fullCert1 from "/assets/certificati/inglese.png"; 
 import fullCert2 from "/assets/certificati/drone.png"; 
-
-
+import fullCert3 from "/assets/certificati/cyber.png"; 
 export const listTools = [
   { id: 1, gambar: Tools1, nama: "Visual Studio", ket: "Code Editor", dad: "100" },
   { id: 2, gambar: Tools2, nama: "GitHub", ket: "Repository", dad: "200" },
@@ -119,5 +118,5 @@ export const listCertifications = [
   { id: 4, gambar: Cert5, certImage: null, nama: "Kubernetes", ket: "Container Orchestration", anno: "2026", dad: "400" },
   { id: 5, gambar: Cert3, certImage: fullCert2, nama: "A1/A3 Open Category", ket: "UAS/Drone Pilot License", anno: "2026", dad: "500" },
   { id: 6, gambar: Cert2, certImage: fullCert1, nama: "B2 English", ket: "Language Certification", anno: "2025", dad: "600" },
-  { id: 7, gambar: Cert1, certImage: null, nama: "Coding Challenge", ket: "Achievement / Award", anno: "2023", dad: "700" },
+  { id: 7, gambar: Cert1, certImage: fullCert3, nama: "Coding Challenge", ket: "Achievement / Award", anno: "2024", dad: "700" },
 ];
