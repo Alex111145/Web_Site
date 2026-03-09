@@ -52,6 +52,7 @@ export const listTools = [
 import Project1 from "/assets/project/solar.png"; 
 import Project2 from "/assets/project/super.png"; 
 import Project3 from "/assets/project/artigiano.png"; 
+import Project4 from "/assets/project/biblo.png"; 
 
 
 export const listProyek = [
@@ -91,6 +92,18 @@ export const listProyek = [
     url: "https://github.com/Alex111145/ArtigianatoOnline",
     dad: "300",
   },
+   {
+    id: 4,
+    image: Project4,
+    title: "Book Recommender System",
+    subtitle: "A recommendation engine for book enthusiasts...",
+    fullDescription: "A recommendation system that suggests books to users by analyzing reading patterns, ratings, and preferences. Using collaborative filtering and content-based approaches, it delivers highly personalized reading lists to enhance the user experience and discoverability.",
+    anno: "2024",
+    borderColor: "#3B82F6",
+    gradient: "linear-gradient(145deg, #3B82F6, #000)",
+    url: "https://github.com/Alex111145/BookRecommender",
+    dad: "400",
+  }
   
 ];
 
