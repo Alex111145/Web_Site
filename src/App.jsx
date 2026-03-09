@@ -65,9 +65,9 @@ function App() {
           </div>
 
           <div className="md:ml-auto animate__animated animate__fadeInUp animate__delay-4s">
-            {/* HANDLE AGGIORNATO A alessiogervasini */}
+            {/* MODIFICATA LA PROP NAME PER ANDARE SU DUE RIGHE */}
             <ProfileCard 
-              name="Alessio Gervasini" 
+              name={<>Alessio<br />Gervasini</>} 
               title="Machine Learning Specialist" 
               handle="alessiogervasini" 
               status="Online" 
