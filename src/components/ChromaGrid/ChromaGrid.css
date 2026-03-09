@@ -118,14 +118,15 @@
 .chroma-info .handle {
   color: #aaa;
 }
-
 .chroma-overlay {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 3;
-  backdrop-filter: grayscale(1) brightness(0.78);
-  -webkit-backdrop-filter: grayscale(1) brightness(0.78);
+  /* MODIFICATO: Alzata la luminosità da 0.78 a 0.95 (puoi provare anche 1 per rimuoverla del tutto) */
+  /* MODIFICATO: Abbassata l'intensità del grayscale a 0.5 per far intravedere il colore (metti 0 se vuoi i colori pieni subito) */
+  backdrop-filter: grayscale(0.5) brightness(0.95);
+  -webkit-backdrop-filter: grayscale(0.5) brightness(0.95);
   background: rgba(0, 0, 0, 0.001);
 
   mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
@@ -153,8 +154,9 @@
   inset: 0;
   pointer-events: none;
   z-index: 4;
-  backdrop-filter: grayscale(1) brightness(0.78);
-  -webkit-backdrop-filter: grayscale(1) brightness(0.78);
+  /* MODIFICATO: Stessi valori di luminosità per coerenza */
+  backdrop-filter: grayscale(0.5) brightness(0.95);
+  -webkit-backdrop-filter: grayscale(0.5) brightness(0.95);
   background: rgba(0, 0, 0, 0.001);
 
   mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
@@ -166,7 +168,7 @@
       rgba(255, 255, 255, 0.50) 75%,
       rgba(255, 255, 255, 0.32) 88%,
       transparent 100%);
-  -webkit-mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
+  -webkit-mask-mage: radial-gradient(circle var(--r) at var(--x) var(--y),
       white 0%,
       white 15%,
       rgba(255, 255, 255, 0.90) 30%,
