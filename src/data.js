@@ -118,5 +118,6 @@ export const listCertifications = [
   { id: 4, gambar: Cert5, certImage: null, nama: "Kubernetes", ket: "Container Orchestration", anno: "2026", dad: "400" },
   { id: 5, gambar: Cert3, certImage: fullCert2, nama: "A1/A3 Open Category", ket: "UAS/Drone Pilot License", anno: "2026", dad: "500" },
   { id: 6, gambar: Cert2, certImage: fullCert1, nama: "B2 English", ket: "Language Certification", anno: "2025", dad: "600" },
+  
   { id: 7, gambar: Cert1, certImage: fullCert3, nama: "Coding Challenge", ket: "Achievement / Award", anno: "2024", dad: "700" },
 ];
