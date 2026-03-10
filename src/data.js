@@ -19,6 +19,7 @@ import Tools17 from "/assets/tools/termal.png";
 import Tools18 from "/assets/tools/docker.png";
 import Tools19 from "/assets/tools/kub.png";
 import Tools20 from "/assets/tools/plc.jpg";
+import Tools21 from "/assets/tools/runpod.png";
 
 
 // --- IMPORTAZIONE LOGHI CERTIFICATI (Icone Griglia) ---
@@ -62,6 +63,7 @@ export const listTools = [
   { id: 18, gambar: Tools18, nama: "Docker",                ket: "Containerization",                  dad: "1500", done: false, desc: "Platform used to build, ship and run applications in lightweight containers, ensuring consistent environments across development, testing and production." },
   { id: 19, gambar: Tools19, nama: "Kubernetes",            ket: "Container Orchestration",           dad: "1600", done: false, desc: "Open-source system for automating deployment, scaling and management of containerized applications across clusters of machines." },
   { id: 20, gambar: Tools20, nama: "PLC Programming",       ket: "Industrial Automation",             dad: "1700", done: false, desc: "Programmable Logic Controllers are used to automate industrial processes and machinery. PLC programming enables real-time control of production lines, robotics, SCADA systems and critical infrastructure in manufacturing and energy sectors." },
+  { id: 21, gambar: Tools21, nama: "RunPod",               ket: "GPU Cloud Platform",                dad: "1800", done: true,  desc: "Cloud platform for renting on-demand and spot GPUs to train, fine-tune and deploy machine learning models at scale without managing physical infrastructure." },
 ];
 
 // --- SEZIONE PROGETTI ---
