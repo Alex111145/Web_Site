@@ -8,7 +8,8 @@ import GlassIcons from "./components/GlassIcons/GlassIcons";
 import { listTools, listProyek, listCertifications } from "./data";
 import ChromaGrid from "./components/ChromaGrid/ChromaGrid";
 import ProjectModal from "./components/ProjectModal/ProjectModal"; 
-import CertModal from "./components/CertModal/CertModal"; // Aggiunto import del CertModal
+import CertModal from "./components/CertModal/CertModal";
+import ToolModal from "./components/ToolModal/ToolModal";
 import ContactModal from "./components/ContactModal/ContactModal";
 import Aurora from "./components/Aurora/Aurora";
 import AOS from 'aos';
@@ -28,6 +29,11 @@ function App() {
   const [selectedCert, setSelectedCert] = useState(null);
   const handleCertClick = (cert) => { setSelectedCert(cert); };
   const handleCloseCertModal = () => { setSelectedCert(null); };
+
+  // State per i Tools
+  const [selectedTool, setSelectedTool] = useState(null);
+  const handleToolClick = (tool) => { setSelectedTool(tool); };
+  const handleCloseToolModal = () => { setSelectedTool(null); };
 
   // State per i Contatti
   const [contactType, setContactType] = useState(null);
@@ -95,6 +101,7 @@ function App() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
             <BlurText text="Bachelor's degree in Computer Science from the University of Insubria, with a focus on AI, Machine Learning and Cybersecurity." delay={150} className="text-lg leading-relaxed mb-12 text-gray-300 max-w-4xl mx-auto" />
             <div className="flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-20 mb-8 w-full">
+              <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{listTools.length}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Tools & Technologies</p></div>
               <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{listProyek.length}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Project Finished</p></div>
               <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{listCertifications.filter(c => c.certImage).length}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Certifications Acquired</p></div>
               <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{new Date().getFullYear() - 2023}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Years of Experience</p></div>
@@ -108,7 +115,7 @@ function App() {
           <h1 className="text-4xl font-bold mb-4" data-aos="fade-up">Tools & Technologies</h1>
           <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 mt-14">
             {listTools.map((tool) => (
-              <div key={tool.id} className="flex items-center gap-4 p-4 border border-zinc-700 rounded-xl bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-800 transition-all shadow-lg" data-aos="fade-up" data-aos-delay={tool.dad}>
+              <div key={tool.id} onClick={() => handleToolClick(tool)} className="cursor-pointer flex items-center gap-4 p-4 border border-zinc-700 rounded-xl bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-800 hover:scale-[1.02] transition-all shadow-lg" data-aos="fade-up" data-aos-delay={tool.dad}>
                 <img src={tool.gambar} alt={tool.nama} className="w-16 h-16 object-contain bg-zinc-800 p-2 rounded-lg" />
                 <div className="flex flex-col min-w-0">
                   <ShinyText text={tool.nama} speed={3} className="text-lg font-semibold leading-tight" />
@@ -177,6 +184,7 @@ function App() {
           </div>
         </div>
       </main>
+      <ToolModal isOpen={!!selectedTool} onClose={handleCloseToolModal} tool={selectedTool} />
       <ProjectModal isOpen={!!selectedProject} onClose={handleCloseModal} project={selectedProject} />
       <CertModal isOpen={!!selectedCert} onClose={handleCloseCertModal} cert={selectedCert} />
       <ContactModal isOpen={!!contactType} onClose={handleCloseContactModal} type={contactType} />

@@ -15,6 +15,7 @@ import Tools13 from "/assets/tools/css.png";
 import Tools14 from "/assets/tools/robo.png"; 
 import Tools15 from "/assets/tools/rete.png";
 import Tools16 from "/assets/tools/s3.png";
+import Tools17 from "/assets/tools/termal.png";
 
 // --- IMPORTAZIONE LOGHI CERTIFICATI (Icone Griglia) ---
 import Cert1 from "/assets/cert/challenge.png"; 
@@ -33,22 +34,23 @@ import fullCert2 from "/assets/certificati/drone.png";
 import fullCert3 from "/assets/certificati/cyber.png"; 
 
 export const listTools = [
-  { id: 1, gambar: Tools1, nama: "Visual Studio", ket: "Code Editor", dad: "100" },
-  { id: 2, gambar: Tools2, nama: "GitHub", ket: "Repository", dad: "200" },
-  { id: 3, gambar: Tools3, nama: "Java", ket: "Languages", dad: "300" },
-  { id: 4, gambar: Tools4, nama: "Python", ket: "Languages", dad: "400" },
-  { id: 12, gambar: Tools12, nama: "JavaScript", ket: "Web Language", dad: "450" }, 
-  { id: 13, gambar: Tools13, nama: "CSS", ket: "Styling", dad: "480" },            
-  { id: 5, gambar: Tools5, nama: "SQL", ket: "Database", dad: "500" },
-  { id: 14, gambar: Tools14, nama: "Roboflow", ket: "Computer Vision Tool", dad: "550" },
-  { id: 15, gambar: Tools15, nama: "GAN", ket: "Generative Adversarial Networks", dad: "610" },
-  { id: 6, gambar: Tools6, nama: "Ngrok", ket: "Network Tool", dad: "650" },
-  { id: 7, gambar: Tools7, nama: "Cryptography", ket: "Security", dad: "700" },
-  { id: 8, gambar: Tools8, nama: "Agisoft Metashape", ket: "Photogrammetry Software", dad: "900" },
-  { id: 9, gambar: Tools9, nama: "Pix4Dmapper", ket: "Photogrammetry Software", dad: "1200" },
-  { id: 10, gambar: Tools10, nama: "Instance Segmentation", ket: "Computer Vision", dad: "1000" },
-  { id: 11, gambar: Tools11, nama: "Yolov26", ket: "AI Model", dad: "1100" },
-  { id: 16, gambar: Tools16, nama: "Amazon S3", ket: "Cloud Storage", dad: "1300" },
+  { id: 1,  gambar: Tools1,  nama: "Visual Studio Code", ket: "Code Editor",                      dad: "100",  desc: "Primary development environment used for writing, debugging and managing code across multiple languages and frameworks." },
+  { id: 2,  gambar: Tools2,  nama: "GitHub",             ket: "Repository",                        dad: "200",  desc: "Version control platform used for source code management, collaboration and CI/CD pipelines." },
+  { id: 3,  gambar: Tools3,  nama: "Java",               ket: "Language",                          dad: "300",  desc: "Object-oriented language used for building robust backend applications, algorithms and university-level projects." },
+  { id: 4,  gambar: Tools4,  nama: "Python",             ket: "Language",                          dad: "400",  desc: "Main language for AI, Machine Learning and data science projects. Used with libraries such as TensorFlow, PyTorch and OpenCV." },
+  { id: 12, gambar: Tools12, nama: "JavaScript",         ket: "Web Language",                      dad: "450",  desc: "Used for building interactive web applications and frontend logic, including this portfolio." },
+  { id: 13, gambar: Tools13, nama: "CSS",                ket: "Styling",                           dad: "480",  desc: "Used for designing responsive and modern user interfaces, including animations and layout systems like Flexbox and Grid." },
+  { id: 5,  gambar: Tools5,  nama: "SQL",                ket: "Database",                          dad: "500",  desc: "Used for relational database design and querying in both academic and personal projects." },
+  { id: 14, gambar: Tools14, nama: "Roboflow",           ket: "Computer Vision Tool",              dad: "550",  desc: "Platform used to label, augment and export datasets for training custom object detection and segmentation models." },
+  { id: 15, gambar: Tools15, nama: "GAN",                ket: "Generative Adversarial Networks",   dad: "610",  desc: "Applied generative deep learning techniques for image synthesis and data augmentation in AI research projects." },
+  { id: 6,  gambar: Tools6,  nama: "Ngrok",              ket: "Network Tool",                      dad: "650",  desc: "Used to expose local servers to the internet for testing webhooks, APIs and remote demos." },
+  { id: 7,  gambar: Tools7,  nama: "Cryptography",       ket: "Security",                          dad: "700",  desc: "Applied symmetric and asymmetric encryption, hashing and digital signatures in cybersecurity coursework and projects." },
+  { id: 8,  gambar: Tools8,  nama: "Agisoft Metashape",  ket: "Photogrammetry Software",           dad: "900",  desc: "Professional photogrammetry software used to process aerial drone imagery into 3D models and orthophotos." },
+  { id: 9,  gambar: Tools9,  nama: "Pix4Dmapper",        ket: "Photogrammetry Software",           dad: "1200", desc: "Used for mapping and surveying workflows, generating point clouds and digital surface models from drone imagery." },
+  { id: 10, gambar: Tools10, nama: "Instance Segmentation", ket: "Computer Vision",               dad: "1000", desc: "Implemented instance segmentation pipelines to detect and delineate individual objects in images at pixel level." },
+  { id: 11, gambar: Tools11, nama: "YOLOv8",             ket: "AI Model",                          dad: "1100", desc: "State-of-the-art real-time object detection model used in computer vision projects for fast and accurate inference." },
+  { id: 16, gambar: Tools16, nama: "Amazon S3",          ket: "Cloud Storage",                     dad: "1300", desc: "AWS object storage service used to store and serve datasets, model artifacts and static assets in the cloud." },
+  { id: 17, gambar: Tools17, nama: "Thermal Vision",      ket: "Hardware & Sensing",                dad: "1400", desc: "Thermal imaging technology used to detect heat signatures and temperature variations invisible to the naked eye. Commonly applied in industrial inspection, building diagnostics, search and rescue, medical imaging and security surveillance." },
 ];
 
 // --- SEZIONE PROGETTI ---
