@@ -16,6 +16,7 @@ import Tools14 from "/assets/tools/robo.png";
 import Tools15 from "/assets/tools/rete.png";
 import Tools16 from "/assets/tools/s3.png";
 import Tools17 from "/assets/tools/termal.png";
+import Tools18 from "/assets/tools/plc.jpg";
 
 // --- IMPORTAZIONE LOGHI CERTIFICATI (Icone Griglia) ---
 import Cert1 from "/assets/cert/challenge.png"; 
@@ -27,6 +28,7 @@ import Cert6 from "/assets/cert/docker.png";
 import Cert7 from "/assets/cert/google.png";
 import Cert8 from "/assets/cert/aws1.png";
 import Cert9 from "/assets/cert/aws2.png";
+import Cert10 from "/assets/cert/plcprog.png";
 
 // --- IMPORTAZIONE IMMAGINI CERTIFICATI (Full Size per Modal) ---
 import fullCert1 from "/assets/certificati/inglese.png"; 
@@ -51,6 +53,7 @@ export const listTools = [
   { id: 11, gambar: Tools11, nama: "YOLOv8",             ket: "AI Model",                          dad: "1100", desc: "State-of-the-art real-time object detection model used in computer vision projects for fast and accurate inference." },
   { id: 16, gambar: Tools16, nama: "Amazon S3",          ket: "Cloud Storage",                     dad: "1300", desc: "AWS object storage service used to store and serve datasets, model artifacts and static assets in the cloud." },
   { id: 17, gambar: Tools17, nama: "Thermal Vision",      ket: "Hardware & Sensing",                dad: "1400", desc: "Thermal imaging technology used to detect heat signatures and temperature variations invisible to the naked eye. Commonly applied in industrial inspection, building diagnostics, search and rescue, medical imaging and security surveillance." },
+  { id: 18, gambar: Tools18, nama: "PLC Programming",     ket: "Industrial Automation",             dad: "1500", desc: "Programmable Logic Controllers are used to automate industrial processes and machinery. PLC programming enables real-time control of production lines, robotics, SCADA systems and critical infrastructure in manufacturing and energy sectors." },
 ];
 
 // --- SEZIONE PROGETTI ---
@@ -117,8 +120,9 @@ export const listCertifications = [
   { id: 9, gambar: Cert9, certImage: null, nama: "AWS Machine Learning Engineer", ket: "Associate Certification", anno: "2026", dad: "900" },
   { id: 8, gambar: Cert8, certImage: null, nama: "AWS Certified AI Practitioner", ket: "Foundational Certification", anno: "2026", dad: "800" },
   { id: 3, gambar: Cert6, certImage: null, nama: "Docker", ket: "DevOps Certification", anno: "2026", dad: "300" },
+    { id: 10, gambar: Cert10, certImage: null,      nama: "PLC ",       ket: "Industrial Automation Cert", anno: "2025", dad: "1000" },
   { id: 4, gambar: Cert5, certImage: null, nama: "Kubernetes", ket: "Container Orchestration", anno: "2026", dad: "400" },
   { id: 5, gambar: Cert3, certImage: fullCert2, nama: "A1/A3 Open Category", ket: "UAS/Drone Pilot License", anno: "2026", dad: "500" },
   { id: 6, gambar: Cert2, certImage: fullCert1, nama: "B2 English", ket: "Language Certification", anno: "2025", dad: "600" },
-  { id: 7, gambar: Cert1, certImage: fullCert3, nama: "Coding Challenge", ket: "Achievement / Award", anno: "2024", dad: "700" },
+  { id: 7,  gambar: Cert1,  certImage: fullCert3, nama: "Coding Challenge",      ket: "Achievement / Award",       anno: "2024", dad: "700" },
 ];
