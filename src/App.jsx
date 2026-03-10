@@ -114,12 +114,15 @@ function App() {
         <div className="tools mt-32 text-white">
           <h1 className="text-4xl font-bold mb-4" data-aos="fade-up">Tools & Technologies</h1>
           <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 mt-14">
-            {listTools.map((tool) => (
+            {[...listTools]
+              .sort((a, b) => { if (a.done === b.done) return 0; return a.done ? -1 : 1; })
+              .map((tool) => (
               <div key={tool.id} onClick={() => handleToolClick(tool)} className="cursor-pointer flex items-center gap-4 p-4 border border-zinc-700 rounded-xl bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-800 hover:scale-[1.02] transition-all shadow-lg" data-aos="fade-up" data-aos-delay={tool.dad}>
                 <img src={tool.gambar} alt={tool.nama} className="w-16 h-16 object-contain bg-zinc-800 p-2 rounded-lg" />
                 <div className="flex flex-col min-w-0">
                   <ShinyText text={tool.nama} speed={3} className="text-lg font-semibold leading-tight" />
                   <p className="text-sm text-zinc-400 leading-snug break-words">{tool.ket}</p>
+                  {!tool.done && <span className="text-sm text-violet-400">Soon...</span>}
                 </div>
               </div>
             ))}

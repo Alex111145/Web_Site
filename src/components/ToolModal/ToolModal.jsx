@@ -38,7 +38,7 @@ const ToolModal = ({ isOpen, onClose, tool }) => {
         <div className="p-5 flex justify-between items-start border-b border-zinc-800">
           <div>
             <h2 className="text-2xl font-bold text-white">{tool.nama}</h2>
-            <p className="text-violet-400 text-sm mt-1">{tool.ket}</p>
+            <p className="text-violet-400 text-sm mt-1">{tool.ket}{!tool.done && <span className="text-violet-300"> — Soon...</span>}</p>
           </div>
           <button
             onClick={handleClose}
