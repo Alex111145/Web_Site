@@ -95,7 +95,7 @@ export const listProyek = [
   {
     id: 4,
     image: Project4,
-    title: "Book Recommender System",
+    title: "Book Recommender",
     subtitle: "A recommendation engine for book enthusiasts...",
     fullDescription: "A recommendation system that suggests books to users by analyzing reading patterns...",
     anno: "2024",
