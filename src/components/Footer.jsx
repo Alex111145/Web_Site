@@ -16,7 +16,7 @@ const Footer = () => {
         
         {/* Judul - paling atas di mobile */}
         <h1 className="text-2xl font-bold order-1 md:order-none text-white">
-          Portofolio
+          Portfolio
         </h1>
 
         {/* Ikon Sosmed rimosse come richiesto */}
