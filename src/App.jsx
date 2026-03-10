@@ -31,7 +31,11 @@ function App() {
   useEffect(() => {
     const isReload = performance.getEntriesByType("navigation")[0]?.type === "reload";
   
-    if (isReload) { window.location.replace(window.location.origin + "/Web_Site/"); }
+    if (isReload) { 
+      // Forza il caricamento dal server anziché dalla cache
+      window.location.replace(window.location.origin + "/Web_Site/");
+      window.location.reload(true); 
+    }
   }, []);
 
   return (
