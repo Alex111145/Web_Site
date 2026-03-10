@@ -130,7 +130,12 @@ function App() {
         <div className="certifications mt-24 text-white">
           <h1 className="text-4xl font-bold mb-4" data-aos="fade-up">Certifications</h1>
           <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 mt-14">
-            {listCertifications.map((cert) => (
+            {[...listCertifications]
+              .sort((a, b) => {
+                if (!!a.certImage === !!b.certImage) return Number(b.anno) - Number(a.anno);
+                return a.certImage ? -1 : 1;
+              })
+              .map((cert) => (
               <div 
                 key={cert.id} 
                 onClick={() => handleCertClick(cert)} 

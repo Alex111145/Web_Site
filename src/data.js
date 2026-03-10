@@ -53,7 +53,7 @@ export const listTools = [
   { id: 11, gambar: Tools11, nama: "YOLOv8",             ket: "AI Model",                          dad: "1100", desc: "State-of-the-art real-time object detection model used in computer vision projects for fast and accurate inference." },
   { id: 16, gambar: Tools16, nama: "Amazon S3",          ket: "Cloud Storage",                     dad: "1300", desc: "AWS object storage service used to store and serve datasets, model artifacts and static assets in the cloud." },
   { id: 17, gambar: Tools17, nama: "Thermal Vision",      ket: "Hardware & Sensing",                dad: "1400", desc: "Thermal imaging technology used to detect heat signatures and temperature variations invisible to the naked eye. Commonly applied in industrial inspection, building diagnostics, search and rescue, medical imaging and security surveillance." },
-  { id: 18, gambar: Tools18, nama: "PLC Programming",     ket: "Industrial Automation",             dad: "1500", desc: "Programmable Logic Controllers are used to automate industrial processes and machinery. PLC programming enables real-time control of production lines, robotics, SCADA systems and critical infrastructure in manufacturing and energy sectors." },
+  { id: 18, gambar: Tools18, nama: "PLC",     ket: "Industrial Automation",             dad: "1500", desc: "Programmable Logic Controllers are used to automate industrial processes and machinery. PLC programming enables real-time control of production lines, robotics, SCADA systems and critical infrastructure in manufacturing and energy sectors." },
 ];
 
 // --- SEZIONE PROGETTI ---
