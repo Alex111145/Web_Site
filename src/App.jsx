@@ -30,7 +30,7 @@ function App() {
 
   useEffect(() => {
     const isReload = performance.getEntriesByType("navigation")[0]?.type === "reload";
-    // Rimosso il redirect forzato a /portofolio/ per evitare errori di refresh
+  
     if (isReload) { window.location.replace(window.location.origin + "/Web_Site/"); }
   }, []);
 
