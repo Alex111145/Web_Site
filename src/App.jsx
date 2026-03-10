@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import ProfileCard from "./components/ProfileCard/ProfileCard";
 import ShinyText from "./components/ShinyText/ShinyText";
 import BlurText from "./components/BlurText/BlurText";
@@ -33,16 +33,6 @@ function App() {
   const [contactType, setContactType] = useState(null);
   const handleContactClick = (type) => { setContactType(type); };
   const handleCloseContactModal = () => { setContactType(null); };
-
-  useEffect(() => {
-    const isReload = performance.getEntriesByType("navigation")[0]?.type === "reload";
-  
-    if (isReload) { 
-      // Forza il caricamento dal server anziché dalla cache
-      window.location.replace(window.location.origin + "/Web_Site/");
-      window.location.reload(true); 
-    }
-  }, []);
 
   return (
     <>
