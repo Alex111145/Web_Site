@@ -103,7 +103,7 @@ transform: translate3d(0, 0, 0.1px) rotateX(var(--rotate-x)) rotateY(var(--rotat
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -60px;
+  bottom: -65px;
   filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
   -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 95%);
   mask-image: linear-gradient(to bottom, black 70%, transparent 95%);
