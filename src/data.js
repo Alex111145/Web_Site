@@ -13,7 +13,8 @@ import Tools11 from "/assets/tools/yolo.png";
 import Tools12 from "/assets/tools/js.png"; 
 import Tools13 from "/assets/tools/css.png";
 import Tools14 from "/assets/tools/robo.png"; 
-import Tools15 from "/assets/tools/rete.png"; 
+import Tools15 from "/assets/tools/rete.png";
+import Tools16 from "/assets/tools/s3.png";
 
 // --- IMPORTAZIONE LOGHI CERTIFICATI (Icone Griglia) ---
 import Cert1 from "/assets/cert/challenge.png"; 
@@ -47,6 +48,7 @@ export const listTools = [
   { id: 9, gambar: Tools9, nama: "Pix4Dmapper", ket: "Photogrammetry Software", dad: "1200" },
   { id: 10, gambar: Tools10, nama: "Instance Segmentation", ket: "Computer Vision", dad: "1000" },
   { id: 11, gambar: Tools11, nama: "Yolov26", ket: "AI Model", dad: "1100" },
+  { id: 16, gambar: Tools16, nama: "Amazon S3", ket: "Cloud Storage", dad: "1300" },
 ];
 
 // --- SEZIONE PROGETTI ---
