@@ -96,6 +96,7 @@ function App() {
             <BlurText text="Bachelor's degree in Computer Science from the University of Insubria, with a focus on AI, Machine Learning, and Cybersecurity." delay={150} className="text-lg leading-relaxed mb-12 text-gray-300 max-w-4xl mx-auto" />
             <div className="flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-20 mb-8 w-full">
               <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{listProyek.length}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Project Finished</p></div>
+              <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{listCertifications.filter(c => c.certImage).length}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Certifications Acquired</p></div>
               <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{new Date().getFullYear() - 2023}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Years of Experience</p></div>
             </div>
             <ShinyText text="From data noise to intelligent choices." speed={3} className="text-lg font-medium text-violet-400 mt-4" />
