@@ -9,6 +9,7 @@ import { listTools, listProyek, listCertifications } from "./data";
 import ChromaGrid from "./components/ChromaGrid/ChromaGrid";
 import ProjectModal from "./components/ProjectModal/ProjectModal"; 
 import CertModal from "./components/CertModal/CertModal"; // Aggiunto import del CertModal
+import ContactModal from "./components/ContactModal/ContactModal";
 import Aurora from "./components/Aurora/Aurora";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
@@ -24,9 +25,14 @@ function App() {
   const handleCloseModal = () => { setSelectedProject(null); };
 
   // State per i Certificati
-  const [selectedCert, setSelectedCert] = useState(null); 
+  const [selectedCert, setSelectedCert] = useState(null);
   const handleCertClick = (cert) => { setSelectedCert(cert); };
   const handleCloseCertModal = () => { setSelectedCert(null); };
+
+  // State per i Contatti
+  const [contactType, setContactType] = useState(null);
+  const handleContactClick = (type) => { setContactType(type); };
+  const handleCloseContactModal = () => { setContactType(null); };
 
   useEffect(() => {
     const isReload = performance.getEntriesByType("navigation")[0]?.type === "reload";
@@ -160,35 +166,29 @@ function App() {
           <p className="text-base/loose text-center opacity-50 text-white mb-4" data-aos="fade-up">Feel free to reach out through any of these platforms</p>
           
           <div className="flex flex-wrap justify-center gap-8" data-aos="fade-up">
-            <a href="https://github.com/Alex111145" target="_blank" rel="noopener noreferrer" className="p-4 bg-zinc-800/60 rounded-xl border border-zinc-700 hover:border-violet-500 transition-all hover:scale-110 group shadow-lg">
+            <button onClick={() => handleContactClick('github')} className="p-4 bg-zinc-800/60 rounded-xl border border-zinc-700 hover:border-violet-500 transition-all hover:scale-110 group shadow-lg">
               <img src="./assets/tools/github.png" alt="GitHub" className="w-10 h-10 object-contain group-hover:brightness-125" />
-            </a>
+            </button>
 
-            <a href="https://www.linkedin.com/in/891740368" target="_blank" rel="noopener noreferrer" className="p-4 bg-zinc-800/60 rounded-xl border border-zinc-700 hover:border-violet-500 transition-all hover:scale-110 group shadow-lg">
+            <button onClick={() => handleContactClick('linkedin')} className="p-4 bg-zinc-800/60 rounded-xl border border-zinc-700 hover:border-violet-500 transition-all hover:scale-110 group shadow-lg">
               <div className="bg-[#0077b5]/20 p-1 rounded-md">
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 fill-[#0077b5]" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
               </div>
-            </a>
+            </button>
             
-            <a href="mailto:agervasini1@gmail.com" className="p-4 bg-zinc-800/60 rounded-xl border border-zinc-700 hover:border-violet-500 transition-all hover:scale-105 flex items-center gap-4 text-white font-medium shadow-lg">
-              <div className="bg-violet-500/20 p-2 rounded-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 fill-violet-400" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-              </div>
-              <ShinyText text="agervasini1@gmail.com" speed={3} />
-            </a>
+            <button onClick={() => handleContactClick('email')} className="p-4 bg-zinc-800/60 rounded-xl border border-zinc-700 hover:border-violet-500 transition-all hover:scale-110 group shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 fill-violet-400 group-hover:brightness-125" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </button>
 
-            <a href="tel:+393483476847" className="p-4 bg-zinc-800/60 rounded-xl border border-zinc-700 hover:border-violet-500 transition-all hover:scale-105 flex items-center gap-4 text-white font-medium shadow-lg">
-              <div className="bg-violet-500/20 p-2 rounded-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 fill-violet-400" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-              </div>
-              <ShinyText text="+39 348 347 6847" speed={3} />
-            </a>
+            <button onClick={() => handleContactClick('phone')} className="p-4 bg-zinc-800/60 rounded-xl border border-zinc-700 hover:border-violet-500 transition-all hover:scale-110 group shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 fill-violet-400 group-hover:brightness-125" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </button>
           </div>
         </div>
       </main>
       <ProjectModal isOpen={!!selectedProject} onClose={handleCloseModal} project={selectedProject} />
-      {/* Modale delle Certificazioni */}
       <CertModal isOpen={!!selectedCert} onClose={handleCloseCertModal} cert={selectedCert} />
+      <ContactModal isOpen={!!contactType} onClose={handleCloseContactModal} type={contactType} />
     </>
   );
 }
