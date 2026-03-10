@@ -34,6 +34,7 @@ import Cert9 from "/assets/cert/aws2.png";
 import Cert10 from "/assets/cert/plcprog.png";
 import Cert11 from "/assets/cert/nvidia.png";
 import Cert12 from "/assets/cert/nvidia2.png";
+import Cert13 from "/assets/cert/nvidia3.png";
 
 // --- IMPORTAZIONE IMMAGINI CERTIFICATI (Full Size per Modal) ---
 import fullCert1 from "/assets/certificati/inglese.png"; 
@@ -134,4 +135,5 @@ export const listCertifications = [
   { id: 7,  gambar: Cert1,  certImage: fullCert3, nama: "Coding Challenge",      ket: "Achievement / Award",       anno: "2024", dad: "700" },
   { id: 11, gambar: Cert11, certImage: null,      nama: "Agentic AI Professional",         ket: "NVIDIA Certification",       anno: "2026", dad: "1100" },
   { id: 12, gambar: Cert12, certImage: null,      nama: "AI Infrastructure and Operations",      ket: "NVIDIA Certification",       anno: "2026", dad: "1200" },
+  { id: 13, gambar: Cert13, certImage: null,      nama: "Professional Gen AI LLMs",              ket: "NVIDIA Certification",       anno: "2026", dad: "1300" },
 ];
