@@ -78,7 +78,7 @@ function App() {
             </div>
           </div>
 
-          <div className="md:ml-auto animate__animated animate__fadeInUp animate__delay-4s">
+          <div className="md:ml-auto flex justify-center animate__animated animate__fadeInUp animate__delay-4s">
             {/* MODIFICATA LA PROP NAME PER ANDARE SU DUE RIGHE */}
             <ProfileCard 
              name={

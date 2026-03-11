@@ -189,4 +189,8 @@ transform: translate3d(0, 0, 0.1px) rotateX(var(--rotate-x)) rotateY(var(--rotat
 @media (max-width: 768px) {
   .pc-card { height: 70svh; }
   .pc-details h3 { font-size: 2.2em; }
+  .pc-avatar-content .avatar {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
