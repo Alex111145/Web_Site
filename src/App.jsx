@@ -69,7 +69,7 @@ function App() {
             </div>
 
             <div className="flex items-center sm:gap-4 gap-2">
-              <a href="./assets/CV.pdf" download className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors">
+              <a href="./assets/CV.pdf" download="Alessio_Gervasini_CV.pdf" className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors">
                 <ShinyText text="Download CV" speed={3} />
               </a>
               <a href="#project" className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors">
