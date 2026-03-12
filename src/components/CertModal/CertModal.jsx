@@ -50,12 +50,19 @@ const CertModal = ({ isOpen, onClose, cert }) => {
           </button>
         </div>
 
+        {/* Description */}
+        {cert.desc && (
+          <div className="px-6 py-4 border-b border-zinc-800">
+            <p className="text-zinc-300 text-sm leading-relaxed">{cert.desc}</p>
+          </div>
+        )}
+
         {/* Content */}
         <div className="p-6 overflow-auto flex justify-center items-center bg-black/40 rounded-b-2xl min-h-[300px]">
           {cert.certImage ? (
-            <img 
-              src={cert.certImage} 
-              alt={cert.nama} 
+            <img
+              src={cert.certImage}
+              alt={cert.nama}
               className="max-w-full max-h-[75vh] object-contain rounded-lg shadow-md"
             />
           ) : (
