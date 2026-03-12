@@ -43,7 +43,8 @@ import Cert13 from "/assets/cert/nvidia3.png";
 // --- IMPORTAZIONE IMMAGINI CERTIFICATI (Full Size per Modal) ---
 import fullCert1 from "/assets/certificati/inglese.png"; 
 import fullCert2 from "/assets/certificati/drone.png"; 
-import fullCert3 from "/assets/certificati/cyber.png"; 
+import fullCert3 from "/assets/certificati/cyber.png";
+import fullCert4 from "/assets/certificati/AIpractitioner.png";  
 
 export const listTools = [
   { id: 1,  gambar: Tools1,  nama: "Visual Studio Code",    ket: "Code Editor",                      dad: "100",  done: true,  desc: "Primary development environment used for writing, debugging and managing code across multiple languages and frameworks." },
@@ -134,7 +135,7 @@ export const listCertifications = [
   { id: 1, gambar: Cert7, certImage: null, nama: "Google Cloud ML", ket: "Professional Engineer", anno: "2026", dad: "100" },
   { id: 2, gambar: Cert4, certImage: null, nama: "AWS Machine Learning", ket: "Specialty Certification", anno: "2026", dad: "200" },
   { id: 9, gambar: Cert9, certImage: null, nama: "AWS Machine Learning Engineer", ket: "Associate Certification", anno: "2026", dad: "900" },
-  { id: 8, gambar: Cert8, certImage: null, nama: "AWS Certified AI Practitioner", ket: "Foundational Certification", anno: "2026", dad: "800" },
+  { id: 8, gambar: Cert8, certImage: fullCert4, nama: "AWS Certified AI Practitioner", ket: "Foundational Certification", anno: "2026", dad: "800" },
   { id: 3, gambar: Cert6, certImage: null, nama: "Docker", ket: "DevOps Certification", anno: "2026", dad: "300" },
     { id: 10, gambar: Cert10, certImage: null,      nama: "PLC ",       ket: "Industrial Automation Cert", anno: "2025", dad: "1000" },
   { id: 4, gambar: Cert5, certImage: null, nama: "Kubernetes", ket: "Container Orchestration", anno: "2026", dad: "400" },
