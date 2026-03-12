@@ -7,13 +7,14 @@ import SplitText from "./components/SplitText/SplitText";
 import GlassIcons from "./components/GlassIcons/GlassIcons";
 import { listTools, listProyek, listCertifications } from "./data";
 import ChromaGrid from "./components/ChromaGrid/ChromaGrid";
-import ProjectModal from "./components/ProjectModal/ProjectModal"; 
+import ProjectModal from "./components/ProjectModal/ProjectModal";
 import CertModal from "./components/CertModal/CertModal";
 import ToolModal from "./components/ToolModal/ToolModal";
 import ContactModal from "./components/ContactModal/ContactModal";
 import Aurora from "./components/Aurora/Aurora";
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
+import { generateFilledCV } from './components/CVDocument/CVFiller';
 
 AOS.init();
 
@@ -39,6 +40,17 @@ function App() {
   const [contactType, setContactType] = useState(null);
   const handleContactClick = (type) => { setContactType(type); };
   const handleCloseContactModal = () => { setContactType(null); };
+
+  // Download CV dinamico
+  const handleDownloadCV = async () => {
+    const blob = await generateFilledCV();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Alessio_Gervasini_CV.pdf';
+    a.click();
+    URL.revokeObjectURL(url);
+  };
 
   return (
     <>
@@ -69,9 +81,9 @@ function App() {
             </div>
 
             <div className="flex items-center sm:gap-4 gap-2">
-              <a href="./assets/CV.pdf" download="Alessio_Gervasini_CV.pdf" className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors">
+              <button onClick={handleDownloadCV} className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors cursor-pointer">
                 <ShinyText text="Download CV" speed={3} />
-              </a>
+              </button>
               <a href="#project" className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors">
                 <ShinyText text="Explore My Projects" speed={3} />
               </a>
