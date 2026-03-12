@@ -22,6 +22,7 @@ import Tools20 from "/assets/tools/plc.jpg";
 import Tools21 from "/assets/tools/runpod.png";
 import Tools22 from "/assets/tools/amazonq.png";
 import Tools23 from "/assets/tools/amazoniam.png";
+import Tools24 from "/assets/tools/textract.png";
 
 
 // --- IMPORTAZIONE LOGHI CERTIFICATI (Icone Griglia) ---
@@ -68,6 +69,7 @@ export const listTools = [
   { id: 21, gambar: Tools21, nama: "RunPod",               ket: "GPU Cloud Platform",                dad: "1800", done: true,  desc: "Cloud platform for renting on-demand and spot GPUs to train, fine-tune and deploy machine learning models at scale without managing physical infrastructure." },
   { id: 22, gambar: Tools22, nama: "Amazon Q Business",   ket: "AI Assistant",                      dad: "1900", done: false, desc: "AWS generative AI-powered assistant that connects to enterprise data sources to answer questions, summarize content and automate tasks across business applications." },
   { id: 23, gambar: Tools23, nama: "IAM Identity Center", ket: "AWS Security",                     dad: "2000", done: false, desc: "AWS service for centrally managing workforce identities and access to multiple AWS accounts and applications through single sign-on." },
+  { id: 24, gambar: Tools24, nama: "Amazon Textract",    ket: "Document AI",                       dad: "2100", done: false, desc: "AWS machine learning service that automatically extracts text, handwriting and structured data from scanned documents, PDFs and images without manual configuration." },
 ];
 
 // --- SEZIONE PROGETTI ---
