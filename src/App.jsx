@@ -147,8 +147,8 @@ function App() {
           <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 mt-14">
             {[...listCertifications]
               .sort((a, b) => {
-                if (!!a.certImage === !!b.certImage) return Number(b.anno) - Number(a.anno);
-                return a.certImage ? -1 : 1;
+                if (!!a.date === !!b.date) return a.date && b.date ? b.date.localeCompare(a.date) : 0;
+                return a.date ? -1 : 1;
               })
               .map((cert) => (
               <div 
@@ -162,7 +162,7 @@ function App() {
                 <div className="flex flex-col min-w-0">
                   <ShinyText text={cert.nama} speed={3} className="text-lg font-semibold leading-tight" />
                   <p className="text-sm text-zinc-400 leading-snug break-words">
-                    {cert.ket} • <span className="text-violet-400">{cert.certImage ? cert.anno : "Soon..."}</span>
+                    {cert.ket} • <span className="text-violet-400">{cert.date ? cert.anno : "Soon..."}</span>
                   </p>
                 </div>
               </div>
