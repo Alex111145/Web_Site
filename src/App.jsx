@@ -116,7 +116,7 @@ function App() {
               <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{listTools.length}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Tools & Technologies</p></div>
               <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{listProyek.length}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Project Finished</p></div>
               <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{listCertifications.filter(c => c.certImage).length}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Certifications Acquired</p></div>
-              <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{new Date().getFullYear() - 2023}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Years of Experience</p></div>
+              <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{new Date().getFullYear() - 2023}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Years of Experience in Computer Science</p></div>
             </div>
             <ShinyText text="From data noise to intelligent choices." speed={3} className="text-lg font-medium text-violet-400 mt-4" />
           </div>
