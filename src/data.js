@@ -25,6 +25,7 @@ import Tools23 from "/assets/tools/amazoniam.png";
 import Tools24 from "/assets/tools/textract.png";
 import Tools25 from "/assets/tools/vertex.png";
 import Tools26 from "/assets/tools/mcp.png";
+import Tools27 from "/assets/tools/orto.png";
 
 
 // --- IMPORTAZIONE LOGHI CERTIFICATI (Icone Griglia) ---
@@ -76,6 +77,7 @@ export const listTools = [
   { id: 24, gambar: Tools24, nama: "Amazon Textract",    ket: "Document AI",                       dad: "2100", done: false, desc: "AWS machine learning service that automatically extracts text, handwriting and structured data from scanned documents, PDFs and images without manual configuration." },
   { id: 25, gambar: Tools25, nama: "Vertex AI",          ket: "Google Cloud AI Platform",           dad: "2200", done: false, desc: "Google Cloud's unified AI platform for building, deploying and scaling machine learning models and generative AI applications with managed infrastructure and MLOps tools." },
   { id: 26, gambar: Tools26, nama: "Model Context Protocol", ket: "Anthropic Open Standard",        dad: "2300", done: true, desc: "Open protocol by Anthropic that standardizes how AI models connect to external tools, APIs and data sources, enabling modular and context-aware AI application architectures." },
+  { id: 27, gambar: Tools27, nama: "Orthophotogrammetry",   ket: "Aerial Mapping",                  dad: "2400", done: true, desc: "Technique for producing geometrically corrected aerial orthophotos from drone imagery, enabling accurate planimetric measurements and GIS integration for mapping and surveying applications." },
 ];
 
 // --- SEZIONE PROGETTI ---

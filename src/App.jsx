@@ -132,7 +132,7 @@ function App() {
               <div key={tool.id} onClick={() => handleToolClick(tool)} className="cursor-pointer flex items-center gap-4 p-4 border border-zinc-700 rounded-xl bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-800 hover:scale-[1.02] transition-all shadow-lg" data-aos="fade-up" data-aos-delay={tool.dad}>
                 <img src={tool.gambar} alt={tool.nama} className="w-16 h-16 object-contain bg-zinc-800 p-2 rounded-lg" />
                 <div className="flex flex-col min-w-0">
-                  <ShinyText text={tool.nama} speed={3} className="text-lg font-semibold leading-tight" />
+                  <ShinyText text={tool.nama} speed={3} className="text-lg font-semibold leading-tight break-words" />
                   <p className="text-sm text-zinc-400 leading-snug break-words">{tool.ket}</p>
                   {!tool.done && <span className="text-sm text-violet-400">Soon...</span>}
                 </div>
