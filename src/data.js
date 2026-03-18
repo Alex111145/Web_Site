@@ -26,6 +26,8 @@ import Tools24 from "/assets/tools/textract.png";
 import Tools25 from "/assets/tools/vertex.png";
 import Tools26 from "/assets/tools/mcp.png";
 import Tools27 from "/assets/tools/orto.png";
+import Tools28 from "/assets/tools/supbase.png";
+import Tools29 from "/assets/tools/stripe.png";
 
 
 // --- IMPORTAZIONE LOGHI CERTIFICATI (Icone Griglia) ---
@@ -78,6 +80,8 @@ export const listTools = [
   { id: 25, gambar: Tools25, nama: "Vertex AI",          ket: "Google Cloud AI Platform",           dad: "2200", done: false, desc: "Google Cloud's unified AI platform for building, deploying and scaling machine learning models and generative AI applications with managed infrastructure and MLOps tools." },
   { id: 26, gambar: Tools26, nama: "Model Context Protocol", ket: "Anthropic Open Standard",        dad: "2300", done: true, desc: "Open protocol by Anthropic that standardizes how AI models connect to external tools, APIs and data sources, enabling modular and context-aware AI application architectures." },
   { id: 27, gambar: Tools27, nama: "Orthophotogrammetry",   ket: "Aerial Mapping",                  dad: "2400", done: true, desc: "Technique for producing geometrically corrected aerial orthophotos from drone imagery, enabling accurate planimetric measurements and GIS integration for mapping and surveying applications." },
+  { id: 28, gambar: Tools28, nama: "Supabase",              ket: "Backend as a Service",            dad: "2500", done: true, desc: "Open-source Firebase alternative providing a Postgres database, authentication, real-time subscriptions and storage for building full-stack web applications." },
+  { id: 29, gambar: Tools29, nama: "Stripe",                ket: "Payment Processing",              dad: "2600", done: true, desc: "Developer-first payment platform used to integrate online payments, subscriptions and billing into web applications via a robust API." },
 ];
 
 // --- SEZIONE PROGETTI ---
