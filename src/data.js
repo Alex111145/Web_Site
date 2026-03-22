@@ -28,6 +28,7 @@ import Tools26 from "/assets/tools/mcp.png";
 import Tools27 from "/assets/tools/orto.png";
 import Tools28 from "/assets/tools/supbase.png";
 import Tools29 from "/assets/tools/stripe.png";
+import Tools30 from "/assets/tools/poly.png";
 
 
 // --- IMPORTAZIONE LOGHI CERTIFICATI (Icone Griglia) ---
@@ -82,6 +83,7 @@ export const listTools = [
   { id: 27, gambar: Tools27, nama: "Orthophotogrammetry",   ket: "Aerial Mapping",                  dad: "2400", done: true, desc: "Technique for producing geometrically corrected aerial orthophotos from drone imagery, enabling accurate planimetric measurements and GIS integration for mapping and surveying applications." },
   { id: 28, gambar: Tools28, nama: "Supabase",              ket: "Backend as a Service",            dad: "2500", done: true, desc: "Open-source Firebase alternative providing a Postgres database, authentication, real-time subscriptions and storage for building full-stack web applications." },
   { id: 29, gambar: Tools29, nama: "Stripe",                ket: "Payment Processing",              dad: "2600", done: true, desc: "Developer-first payment platform used to integrate online payments, subscriptions and billing into web applications via a robust API." },
+  { id: 30, gambar: Tools30, nama: "Polycam",               ket: "3D Capture & Scanning",           dad: "2700", done: true, desc: "Mobile and web app for capturing high-quality 3D models and environments using LiDAR, photogrammetry and NeRF, used for spatial data collection and 3D reconstruction." },
 ];
 
 // --- SEZIONE PROGETTI ---
