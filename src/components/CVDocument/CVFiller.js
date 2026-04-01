@@ -71,9 +71,10 @@ export async function generateFilledCV() {
     .filter(c => c.certImage !== null)
     .sort((a, b) => Number(b.anno) - Number(a.anno));
 
-  // ── SKILLS: white, regular, left panel, x=25, y=300, col1 full then col2 ──
+  // ── SKILLS: white, regular, left panel, x=25, y=300, long names left col, short right ──
   const maxRows = Math.floor(200 / 14);
-  doneTools.forEach((tool, i) => {
+  const sortedTools = [...doneTools].sort((a, b) => b.nama.length - a.nama.length);
+  sortedTools.forEach((tool, i) => {
     const col = i >= maxRows ? 1 : 0;
     const row = i >= maxRows ? i - maxRows : i;
     page.drawText('• ' + tool.nama, {
