@@ -102,7 +102,7 @@ import Project4 from "/assets/project/biblo.png";
 import SolarDinoImg from "/assets/project/solar.png"; 
 
 export const solarDinoData = {
-  title: "SolarDino",
+  title: "Co-Founder: SolarDino",
   subtitle: "High-precision instance segmentation framework for solar energy monitoring.",
   fullDescription: "SolarDino è un software sviluppato da un gruppo di informatici specializzati in AI. La piattaforma sfrutta algoritmi di deep learning per analizzare foto termiche catturate da droni su impianti fotovoltaici per ottimizzarne la manutenzione predittiva. Il progetto automatizza il processo di ispezione e post elaborazione delle foto, identificando i moduli difettosi termicamente o semplicemente sporchi. L'obiettivo è trasformare dati grezzi in report diagnostici sull' effettiva perdita economica dell' impianto, potendo sostituire i moduli difettosi, riducendo i costi di manutenzione e massimizzando la produzione di energia pulita.",
   url: "https://www.solardino.it",
