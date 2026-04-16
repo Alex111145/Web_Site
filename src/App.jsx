@@ -68,7 +68,7 @@ function App() {
             </h1>
             
             <BlurText 
-              text="Co-Founder of SolarDino | Passionate about Artificial Intelligence. Beyond a strong interest in image recognition, object detection." 
+              text="Co-Founder SolarDino | Passionate about Artificial Intelligence. Beyond a strong interest in image recognition, object detection." 
               delay={150} 
               animateBy="words" 
               className="mb-6" 
@@ -98,7 +98,7 @@ function App() {
       Alessio<br />Gervasini
     </span>
   } 
-  title="Machine Learning Specialist"
+  title="Machine Learning Specialists!"
               handle="alessiogervasini" 
               status="Online" 
               avatarUrl="./assets/alessio.png" 
@@ -123,7 +123,7 @@ function App() {
         </div>
 
         {/* SOFTWARE DI PUNTA: SOLARDINO */}
-        <div className="mt-32 text-white" id="solardino">
+        <div className="mt-32 text-white" id="Co-Founder: SolarDino">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold mb-4" data-aos="fade-up">{solarDinoData.title}</h1>
             <p className="text-lg text-violet-400" data-aos="fade-up" data-aos-delay="100">
