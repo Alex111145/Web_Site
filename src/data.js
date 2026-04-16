@@ -15,7 +15,6 @@ import Tools13 from "/assets/tools/css.png";
 import Tools14 from "/assets/tools/robo.png"; 
 import Tools15 from "/assets/tools/rete.png";
 import Tools16 from "/assets/tools/s3.png";
-import Tools17 from "/assets/tools/termal.png";
 import Tools18 from "/assets/tools/docker.png";
 import Tools19 from "/assets/tools/kub.png";
 import Tools20 from "/assets/tools/plc.jpg";
@@ -29,6 +28,9 @@ import Tools27 from "/assets/tools/orto.png";
 import Tools28 from "/assets/tools/supbase.png";
 import Tools29 from "/assets/tools/stripe.png";
 import Tools30 from "/assets/tools/poly.png";
+import Tools31 from "/assets/tools/hub2.png";
+import Tools32 from "/assets/tools/djithermal.png";
+import Tools33 from "/assets/tools/terra.jpeg";
 
 
 // --- IMPORTAZIONE LOGHI CERTIFICATI (Icone Griglia) ---
@@ -73,7 +75,6 @@ export const listTools = [
   { id: 10, gambar: Tools10, nama: "Instance Segmentation", ket: "Computer Vision",                   dad: "1000", done: true,  desc: "Implemented instance segmentation pipelines to detect and delineate individual objects in images at pixel level." },
   { id: 11, gambar: Tools11, nama: "YOLOv26",               ket: "AI Model",                          dad: "1100", done: true,  desc: "State-of-the-art real-time object detection model used in computer vision projects for fast and accurate inference." },
   { id: 16, gambar: Tools16, nama: "Amazon S3",             ket: "Cloud Storage",                     dad: "1300", done: true,  desc: "AWS object storage service used to store and serve datasets, model artifacts and static assets in the cloud." },
-  { id: 17, gambar: Tools17, nama: "Thermal Vision",        ket: "Hardware & Sensing",                dad: "1400", done: true,  desc: "Thermal imaging technology used to detect heat signatures and temperature variations invisible to the naked eye. Commonly applied in industrial inspection, building diagnostics, search and rescue, medical imaging and security surveillance." },
   { id: 18, gambar: Tools18, nama: "Docker",                ket: "Containerization",                  dad: "1500", done: false, desc: "Platform used to build, ship and run applications in lightweight containers, ensuring consistent environments across development, testing and production." },
   { id: 19, gambar: Tools19, nama: "Kubernetes",            ket: "Container Orchestration",           dad: "1600", done: false, desc: "Open-source system for automating deployment, scaling and management of containerized applications across clusters of machines." },
   { id: 20, gambar: Tools20, nama: "PLC Programming",       ket: "Industrial Automation",             dad: "1700", done: false, desc: "Programmable Logic Controllers are used to automate industrial processes and machinery. PLC programming enables real-time control of production lines, robotics, SCADA systems and critical infrastructure in manufacturing and energy sectors." },
@@ -87,27 +88,28 @@ export const listTools = [
   { id: 28, gambar: Tools28, nama: "Supabase",              ket: "Backend as a Service",            dad: "2500", done: true, desc: "Open-source Firebase alternative providing a Postgres database, authentication, real-time subscriptions and storage for building full-stack web applications." },
   { id: 29, gambar: Tools29, nama: "Stripe",                ket: "Payment Processing",              dad: "2600", done: true, desc: "Developer-first payment platform used to integrate online payments, subscriptions and billing into web applications via a robust API." },
   { id: 30, gambar: Tools30, nama: "Polycam",               ket: "3D Capture & Scanning",           dad: "2700", done: true, desc: "Mobile and web app for capturing high-quality 3D models and environments using LiDAR, photogrammetry and NeRF, used for spatial data collection and 3D reconstruction." },
+  { id: 31, gambar: Tools31, nama: "DJI FlightHub 2",       ket: "Drone Operations Management",     dad: "2800", done: true, desc: "Cloud-based drone operations management platform offering full fleet tracking, mission routing, and real-time situational awareness." },
+  { id: 32, gambar: Tools32, nama: "DJI Thermal",           ket: "Thermal Analysis Software",       dad: "2900", done: true, desc: "Thermal imaging analysis software used to process, measure, and analyze radiometric thermal images captured by drone payloads." },
+  { id: 33, gambar: Tools33, nama: "DJI Terra",             ket: "Photogrammetry & Mapping",        dad: "3000", done: true, desc: "3D model reconstruction software that takes photogrammetry to the next level for mapping, surveying, and infrastructure inspection." },
 ];
 
 // --- SEZIONE PROGETTI ---
-import Project1 from "/assets/project/solar.png"; 
 import Project2 from "/assets/project/super.png"; 
 import Project3 from "/assets/project/artigiano.png"; 
 import Project4 from "/assets/project/biblo.png"; 
 
+// --- AZIENDA / SOFTWARE DI PUNTA ---
+import SolarDinoImg from "/assets/project/solar.png"; 
+
+export const solarDinoData = {
+  title: "Software di punta: SolarDino",
+  subtitle: "High-precision instance segmentation framework for solar energy monitoring.",
+  fullDescription: "SolarDino è un software sviluppato da un gruppo di informatici specializzati in AI. La piattaforma sfrutta algoritmi di deep learning per analizzare foto termiche catturate da droni su impianti fotovoltaici per ottimizzarne la manutenzione predittiva. Il progetto automatizza il processo di ispezione e post elaborazione delle foto, identificando i moduli difettosi termicamente o semplicemente sporchi. L'obiettivo è trasformare dati grezzi in report diagnostici sull' effettiva perdita economica dell' impianto, potendo sostituire i moduli difettosi, riducendo i costi di manutenzione e massimizzando la produzione di energia pulita.",
+  url: "https://www.solardino.it",
+  image: SolarDinoImg
+};
+
 export const listProyek = [
-  {
-    id: 1,
-    image: Project1,
-    title: "Solar Panel Detection",
-    subtitle: "A Computer Vision project using advanced AI models...",
-    fullDescription: "This project implements a high-precision instance segmentation framework for solar energy monitoring. Utilizing multispectral aerial datasets acquired via UAVs.",
-    anno: "Present",
-    borderColor: "#F59E0B",
-    gradient: "linear-gradient(145deg, #F59E0B, #000)",
-    url: "https://github.com/Alex111145/Solar_Panel/tree/dino(nvidia2)",
-    dad: "100",
-  },
   {
     id: 2,
     image: Project2,

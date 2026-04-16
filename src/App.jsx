@@ -5,7 +5,7 @@ import BlurText from "./components/BlurText/BlurText";
 import ScrambledText from "./components/ScrambledText/ScrambledText";
 import SplitText from "./components/SplitText/SplitText";
 import GlassIcons from "./components/GlassIcons/GlassIcons";
-import { listTools, listProyek, listCertifications } from "./data";
+import { listTools, listProyek, listCertifications, solarDinoData } from "./data";
 import ChromaGrid from "./components/ChromaGrid/ChromaGrid";
 import ProjectModal from "./components/ProjectModal/ProjectModal";
 import CertModal from "./components/CertModal/CertModal";
@@ -68,7 +68,7 @@ function App() {
             </h1>
             
             <BlurText 
-              text="Passionate about Artificial Intelligence and Cybersecurity. Deeply committed to protecting digital assets and exploring network security." 
+              text="Co-Founder of SolarDino | Passionate about Artificial Intelligence. Beyond a strong interest in image recognition, object detection." 
               delay={150} 
               animateBy="words" 
               className="mb-6" 
@@ -119,6 +119,38 @@ function App() {
               <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{new Date().getFullYear() - 2023}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Years of Experience in Computer Science</p></div>
             </div>
             <ShinyText text="From data noise to intelligent choices." speed={3} className="text-lg font-medium text-violet-400 mt-4" />
+          </div>
+        </div>
+
+        {/* SOFTWARE DI PUNTA: SOLARDINO */}
+        <div className="mt-32 text-white" id="solardino">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold mb-4" data-aos="fade-up">{solarDinoData.title}</h1>
+            <p className="text-lg text-violet-400" data-aos="fade-up" data-aos-delay="100">
+              <ScrambledText text="La Rivoluzione AI nel Monitoraggio Fotovoltaico" />
+            </p>
+          </div>
+          <div className="grid md:grid-cols-5 items-center gap-10 xl:gap-16">
+            <div className="md:col-span-2" data-aos="fade-right">
+              <img 
+                src={solarDinoData.image} 
+                alt="Piattaforma SolarDino" 
+                className="rounded-xl shadow-lg border border-zinc-700 w-full" 
+              />
+            </div>
+            <div className="md:col-span-3" data-aos="fade-left">
+              <p className="text-lg leading-relaxed text-gray-300 mb-8">
+                {solarDinoData.fullDescription}
+              </p>
+              <a 
+                href={solarDinoData.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-semibold inline-block bg-violet-600 text-white py-3 px-8 rounded-full hover:bg-violet-700 transition-colors cursor-pointer shadow-[0_0_20px_rgba(168,85,247,0.5)]"
+              >
+                Visita il sito
+              </a>
+            </div>
           </div>
         </div>
 
