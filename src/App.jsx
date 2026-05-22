@@ -140,7 +140,7 @@ function App() {
             </div>
             <div className="md:col-span-3" data-aos="fade-left">
               <h2 className="text-2xl font-semibold mb-4 text-white">
-                Co-Founder SolarDino
+                Co-Founder - CEO SolarDino
               </h2>
               <p className="text-lg leading-relaxed text-gray-300 mb-8">
                 {solarDinoData.fullDescription}
