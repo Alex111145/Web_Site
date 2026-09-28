@@ -6,12 +6,13 @@ import ScrambledText from "./components/ScrambledText/ScrambledText";
 import SplitText from "./components/SplitText/SplitText";
 import GlassIcons from "./components/GlassIcons/GlassIcons";
 import { listTools, listProyek, listCertifications, solarDinoData } from "./data";
-import ChromaGrid from "./components/ChromaGrid/ChromaGrid";
+import "./components/ChromaGrid/ChromaGrid.css";
 import ProjectModal from "./components/ProjectModal/ProjectModal";
 import CertModal from "./components/CertModal/CertModal";
 import ToolModal from "./components/ToolModal/ToolModal";
 import ContactModal from "./components/ContactModal/ContactModal";
 import Aurora from "./components/Aurora/Aurora";
+import Marquee from "./components/Marquee/Marquee";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { generateFilledCV } from './components/CVDocument/CVFiller';
@@ -114,9 +115,9 @@ function App() {
             <BlurText text="Bachelor's degree in Computer Science from the University of Insubria, with a focus on AI, Machine Learning and Cybersecurity. Currently pursuing a Master's degree in Machine Learning at SUPSI, in Zurich and Lugano." delay={150} className="text-lg leading-relaxed mb-12 text-gray-300 max-w-4xl mx-auto" />
             <div className="flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-20 mb-8 w-full">
               <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{listTools.length}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Tools & Technologies</p></div>
-              <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{listProyek.filter(p => !p.soon).length}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Project Finished</p></div>
+              <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">6<span className="text-violet-500">+</span></h1><p className="text-gray-400">Project Finished</p></div>
               <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{listCertifications.filter(c => c.certImage).length}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Certifications Acquired</p></div>
-              <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{new Date().getFullYear() - 2022}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Years of Experience in Computer Science</p></div>
+              <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{new Date().getFullYear() - 2021}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Years of Experience in Computer Science</p></div>
             </div>
             <ShinyText text="From data noise to intelligent choices." speed={3} className="text-lg font-medium text-violet-400 mt-4" />
           </div>
@@ -139,9 +140,6 @@ function App() {
               />
             </div>
             <div className="md:col-span-3" data-aos="fade-left">
-              <h2 className="text-2xl font-semibold mb-4 text-white">
-                Co-Founder - CEO SolarDino
-              </h2>
               <p className="text-lg leading-relaxed text-gray-300 mb-8">
                 {solarDinoData.fullDescription}
               </p>
@@ -159,49 +157,45 @@ function App() {
 
         {/* TOOLS */}
         <div className="tools mt-32 text-white">
-          <h1 className="text-4xl font-bold mb-4" data-aos="fade-up">Tools & Technologies</h1>
-          <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 mt-14">
-            {[...listTools]
-              .sort((a, b) => { if (a.done === b.done) return 0; return a.done ? -1 : 1; })
-              .map((tool) => (
-              <div key={tool.id} onClick={() => handleToolClick(tool)} className="cursor-pointer flex items-center gap-4 p-4 border border-zinc-700 rounded-xl bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-800 hover:scale-[1.02] transition-all shadow-lg" data-aos="fade-up" data-aos-delay={tool.dad}>
-                <img src={tool.gambar} alt={tool.nama} className="w-16 h-16 object-contain bg-zinc-800 p-2 rounded-lg" />
-                <div className="flex flex-col min-w-0">
-                  <ShinyText text={tool.nama} speed={3} className="text-lg font-semibold leading-tight break-words" />
-                  <p className="text-sm text-zinc-400 leading-snug break-words">{tool.ket}</p>
-                  {!tool.done && <span className="text-sm text-violet-400">Soon...</span>}
+          <h1 className="text-center text-4xl font-bold mb-4" data-aos="fade-up">Tools & Technologies</h1>
+          <div className="mt-14" data-aos="fade-up">
+            <Marquee
+              items={listTools}
+              rows={4}
+              renderItem={(tool) => (
+                <div onClick={() => handleToolClick(tool)} className="cursor-pointer h-full flex items-center gap-4 p-4 border border-zinc-700 rounded-xl bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-800 transition-colors shadow-lg">
+                  <img src={tool.gambar} alt={tool.nama} className="w-16 h-16 shrink-0 object-contain bg-zinc-800 p-2 rounded-lg" />
+                  <div className="flex flex-col min-w-0">
+                    <ShinyText text={tool.nama} speed={3} className="text-lg font-semibold leading-tight break-words" />
+                    <p className="text-sm text-zinc-400 leading-snug break-words">{tool.ket}</p>
+                    {!tool.done && <span className="text-sm text-violet-400">Soon...</span>}
+                  </div>
                 </div>
-              </div>
-            ))}
+              )}
+            />
           </div>
         </div>
 
         {/* CERTIFICATIONS */}
         <div className="certifications mt-24 text-white">
-          <h1 className="text-4xl font-bold mb-4" data-aos="fade-up">Certifications</h1>
-          <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 mt-14">
-            {[...listCertifications]
-              .sort((a, b) => {
-                if (!!a.date === !!b.date) return a.date && b.date ? b.date.localeCompare(a.date) : 0;
-                return a.date ? -1 : 1;
-              })
-              .map((cert) => (
-              <div 
-                key={cert.id} 
-                onClick={() => handleCertClick(cert)} 
-                className="cursor-pointer flex items-center gap-4 p-4 border border-zinc-700 rounded-xl bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-800 hover:scale-[1.02] transition-all shadow-lg" 
-                data-aos="fade-up" 
-                data-aos-delay={cert.dad}
-              >
-                <img src={cert.gambar} alt={cert.nama} className="w-16 h-16 object-contain bg-zinc-800 p-2 rounded-lg" />
-                <div className="flex flex-col min-w-0">
-                  <ShinyText text={cert.nama} speed={3} className="text-lg font-semibold leading-tight" />
-                  <p className="text-sm text-zinc-400 leading-snug break-words">
-                    {cert.ket} • <span className="text-violet-400">{cert.date ? cert.anno : "Soon..."}</span>
-                  </p>
+          <h1 className="text-center text-4xl font-bold mb-4" data-aos="fade-up">Certifications</h1>
+          <div className="mt-14" data-aos="fade-up">
+            <Marquee
+              items={listCertifications}
+              rows={3}
+              secondsPerItem={5}
+              renderItem={(cert) => (
+                <div onClick={() => handleCertClick(cert)} className="cursor-pointer h-full flex items-center gap-4 p-4 border border-zinc-700 rounded-xl bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-800 transition-colors shadow-lg">
+                  <img src={cert.gambar} alt={cert.nama} className="w-16 h-16 shrink-0 object-contain bg-zinc-800 p-2 rounded-lg" />
+                  <div className="flex flex-col min-w-0">
+                    <ShinyText text={cert.nama} speed={3} className="text-lg font-semibold leading-tight" />
+                    <p className="text-sm text-zinc-400 leading-snug break-words">
+                      {cert.ket} • <span className="text-violet-400">{cert.date ? cert.anno : "Soon..."}</span>
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              )}
+            />
           </div>
         </div>
 
@@ -209,7 +203,33 @@ function App() {
         <div className="mt-32 py-10" id="project">
           <h1 className="text-center text-4xl font-bold mb-2 text-white" data-aos="fade-up">Projects</h1>
           <div className="mt-14" data-aos="fade-up">
-            <ChromaGrid items={listProyek} onItemClick={handleProjectClick} radius={500} damping={0.45} fadeOut={0.6} />
+            <Marquee
+              items={listProyek}
+              rows={2}
+              fullRows
+              secondsPerItem={5}
+              itemWidth="21rem"
+              renderItem={(project) => (
+                <article
+                  onClick={() => handleProjectClick(project)}
+                  className="chroma-card cursor-pointer h-full"
+                  style={{ "--card-border": project.borderColor || "transparent", "--card-gradient": project.gradient, width: "100%" }}
+                >
+                  <div className="chroma-img-wrapper" style={{ flex: "none" }}>
+                    <img src={project.image} alt={project.title} loading="lazy" style={{ height: "11rem" }} />
+                  </div>
+                  <footer className="chroma-info flex flex-col gap-1">
+                    <div className="flex justify-between items-start gap-2">
+                      <h3 className="name flex-1 m-0">{project.title}</h3>
+                      <span className="text-xs font-bold text-violet-400 bg-violet-500/10 border border-violet-500/20 px-2 py-1 rounded-md shrink-0">
+                        {project.soon ? "Soon..." : project.anno}
+                      </span>
+                    </div>
+                    <p className="role">{project.subtitle}</p>
+                  </footer>
+                </article>
+              )}
+            />
           </div>
         </div>
 
