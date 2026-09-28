@@ -31,6 +31,8 @@ import Tools30 from "/assets/tools/poly.png";
 import Tools31 from "/assets/tools/hub2.png";
 import Tools32 from "/assets/tools/djithermal.png";
 import Tools33 from "/assets/tools/terra.jpeg";
+import Tools34 from "/assets/tools/gitlab.png";
+import Tools35 from "/assets/tools/raspberrypi.png";
 
 
 // --- IMPORTAZIONE LOGHI CERTIFICATI (Icone Griglia) ---
@@ -91,12 +93,17 @@ export const listTools = [
   { id: 31, gambar: Tools31, nama: "DJI FlightHub 2",       ket: "Drone Operations Management",     dad: "2800", done: true, desc: "Cloud-based drone operations management platform offering full fleet tracking, mission routing, and real-time situational awareness." },
   { id: 32, gambar: Tools32, nama: "DJI Thermal",           ket: "Thermal Analysis Software",       dad: "2900", done: true, desc: "Thermal imaging analysis software used to process, measure, and analyze radiometric thermal images captured by drone payloads." },
   { id: 33, gambar: Tools33, nama: "DJI Terra",             ket: "Photogrammetry & Mapping",        dad: "3000", done: true, desc: "3D model reconstruction software that takes photogrammetry to the next level for mapping, surveying, and infrastructure inspection." },
+  { id: 34, gambar: Tools34, nama: "GitLab",                ket: "Repository & CI/CD",              dad: "3100", done: true, desc: "DevOps platform used for issue boards, merge requests and GitLab CI/CD pipelines for automated build, test and deploy." },
+  { id: 35, gambar: Tools35, nama: "Raspberry Pi Pico W",   ket: "Embedded Hardware",               dad: "3200", done: true, desc: "RP2040 microcontroller board with WiFi, programmed in C with the Pico SDK for sensor acquisition (I2C), MQTT communication and embedded debugging." },
 ];
 
 // --- SEZIONE PROGETTI ---
 import Project2 from "/assets/project/super.png"; 
 import Project3 from "/assets/project/artigiano.png"; 
 import Project4 from "/assets/project/biblo.png"; 
+import Project5 from "/assets/project/compgraph.jpg";
+import Project6 from "/assets/project/pico.jpg";
+import Project7 from "/assets/project/climbing.jpg";
 
 // --- AZIENDA / SOFTWARE DI PUNTA ---
 import SolarDinoImg from "/assets/project/solar.png"; 
@@ -104,12 +111,48 @@ import SolarDinoImg from "/assets/project/solar.png";
 export const solarDinoData = {
   title: "Co-Founder - CEO: SolarDino",
   subtitle: "High-precision instance segmentation framework for solar energy monitoring.",
-  fullDescription: "SolarDino è una startup AgTech d'avanguardia che rivoluziona la manutenzione degli impianti fotovoltaici attraverso l'Intelligenza Artificiale. Sviluppata da informatici specializzati, la piattaforma sfrutta algoritmi di deep learning per automatizzare l'analisi delle foto termiche catturate dai droni su pannelli solari, identificando istantaneamente moduli difettosi o sporchi. Il software trasforma i dati grezzi in report diagnostici che quantificano l'effettiva perdita economica dell'impianto, consentendo interventi di manutenzione predittiva mirati, riducendo i costi e massimizzando la produzione di energia pulita.\nOggi la startup opera con un modello di business ibrido: come B2B SaaS, fornendo l'infrastruttura software alle aziende di droni che caricano le foto per ottenere i report, e tramite un braccio operativo B2C on-demand, offrendo il servizio di raccolta dati e analisi \"chiavi in mano\" direttamente ai privati che ne fanno richiesta.",
+  fullDescription: "SolarDino is an innovative AgTech company that transforms the maintenance of photovoltaic plants through Artificial Intelligence. Built by specialized computer scientists, the platform uses deep learning algorithms to automate the analysis of thermal images captured by drones over solar panels, instantly identifying faulty or dirty modules. The software turns raw data into diagnostic reports that quantify the plant's actual economic loss, enabling targeted predictive maintenance, reducing costs and maximizing clean energy production. Beyond photovoltaics, SolarDino delivers 3D models, orthomosaics and aerial mapping and surveying services, backed by a network of more than 100 collaborators.\nToday the company operates with a hybrid business model: as a B2B SaaS, providing the software infrastructure to drone companies that upload their images to receive reports, and through an on demand B2C operational branch, offering turnkey data collection and analysis directly to private clients who request it.",
   url: "https://www.solardino.it",
   image: SolarDinoImg
 };
 
 export const listProyek = [
+  {
+    id: 7,
+    image: Project7,
+    title: "Visual Odometry for Climbing Robots",
+    subtitle: "Camera based motion tracking for wall climbing robots...",
+    fullDescription: "Research project with the SUPSI robotics lab in Lugano: camera based motion estimation (visual odometry and SLAM) for robots that climb ship hulls and wind turbine blades, where wheel sensors fail due to slipping.",
+    anno: "2026",
+    soon: true,
+    borderColor: "#06B6D4",
+    gradient: "linear-gradient(145deg, #06B6D4, #000)",
+    dad: "50",
+  },
+  {
+    id: 5,
+    image: Project5,
+    title: "3D Graphics Engine",
+    subtitle: "A C++ 3D engine and viewer built with OpenGL 1.x...",
+    fullDescription: "Project at SUPSI: a C++ graphics engine and scene viewer built with OpenGL 1.x, with textured models, dynamic lights, multiple cameras and planar reflections.",
+    anno: "2026",
+    soon: true,
+    borderColor: "#F59E0B",
+    gradient: "linear-gradient(145deg, #F59E0B, #000)",
+    dad: "100",
+  },
+  {
+    id: 6,
+    image: Project6,
+    title: "Pico W IoT Monitoring",
+    subtitle: "Raspberry Pi Pico W sensor data on a live web dashboard...",
+    fullDescription: "Project at SUPSI: a Raspberry Pi Pico W sends temperature and humidity over MQTT to a FastAPI web app with live charts and LLM recommendations, deployed with Docker and GitLab CI/CD.",
+    anno: "2026",
+    soon: true,
+    borderColor: "#C51A4A",
+    gradient: "linear-gradient(180deg, #C51A4A, #000)",
+    dad: "150",
+  },
   {
     id: 2,
     image: Project2,

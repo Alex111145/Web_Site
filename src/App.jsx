@@ -98,7 +98,7 @@ function App() {
       Alessio<br />Gervasini
     </span>
   } 
-  title="Machine Learning Specialists"
+  title="Master in Machine Learning"
               handle="alessiogervasini" 
               status="Online" 
               avatarUrl="./assets/alessio.png" 
@@ -111,12 +111,12 @@ function App() {
         <div className="mt-15 mx-auto w-full max-w-[1600px] rounded-3xl border-[5px] border-violet-500/40 shadow-[0_0_30px_rgba(168,85,247,0.4)] bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-8 md:p-12" id="about">
           <div className="flex flex-col items-center justify-center text-center text-white" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
-            <BlurText text="Bachelor's degree in Computer Science from the University of Insubria, with a focus on AI, Machine Learning and Cybersecurity." delay={150} className="text-lg leading-relaxed mb-12 text-gray-300 max-w-4xl mx-auto" />
+            <BlurText text="Bachelor's degree in Computer Science from the University of Insubria, with a focus on AI, Machine Learning and Cybersecurity. Currently pursuing a Master's degree in Machine Learning at SUPSI, in Zurich and Lugano." delay={150} className="text-lg leading-relaxed mb-12 text-gray-300 max-w-4xl mx-auto" />
             <div className="flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-20 mb-8 w-full">
               <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{listTools.length}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Tools & Technologies</p></div>
-              <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{listProyek.length}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Project Finished</p></div>
+              <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{listProyek.filter(p => !p.soon).length}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Project Finished</p></div>
               <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{listCertifications.filter(c => c.certImage).length}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Certifications Acquired</p></div>
-              <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{new Date().getFullYear() - 2023}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Years of Experience in Computer Science</p></div>
+              <div><h1 className="text-4xl md:text-5xl mb-2 font-bold">{new Date().getFullYear() - 2022}<span className="text-violet-500">+</span></h1><p className="text-gray-400">Years of Experience in Computer Science</p></div>
             </div>
             <ShinyText text="From data noise to intelligent choices." speed={3} className="text-lg font-medium text-violet-400 mt-4" />
           </div>
@@ -127,14 +127,14 @@ function App() {
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold mb-4" data-aos="fade-up">{solarDinoData.title}</h1>
             <p className="text-lg text-violet-400" data-aos="fade-up" data-aos-delay="100">
-              <ScrambledText text="La Rivoluzione AI nel Monitoraggio Fotovoltaico" />
+              <ScrambledText text="AI for Drone Inspection, Mapping and 3D Modeling" />
             </p>
           </div>
           <div className="grid md:grid-cols-5 items-center gap-10 xl:gap-16">
             <div className="md:col-span-2" data-aos="fade-right">
               <img 
                 src={solarDinoData.image} 
-                alt="Piattaforma SolarDino" 
+                alt="SolarDino platform" 
                 className="rounded-xl shadow-lg border border-zinc-700 w-full" 
               />
             </div>
@@ -151,7 +151,7 @@ function App() {
                 rel="noopener noreferrer"
                 className="font-semibold inline-block bg-violet-600 text-white py-3 px-8 rounded-full hover:bg-violet-700 transition-colors cursor-pointer shadow-[0_0_20px_rgba(168,85,247,0.5)]"
               >
-                Visita il sito
+                Visit the website
               </a>
             </div>
           </div>

@@ -108,9 +108,9 @@ export const ChromaGrid = ({
             {/* INIZIO MODIFICA: Titolo e Anno affiancati */}
             <div className="flex justify-between items-start gap-2">
               <h3 className="name flex-1 m-0">{c.title}</h3>
-              {c.anno && (
+              {(c.soon || c.anno) && (
                 <span className="text-xs font-bold text-violet-400 bg-violet-500/10 border border-violet-500/20 px-2 py-1 rounded-md shrink-0">
-                  {c.anno}
+                  {c.soon ? "Soon..." : c.anno}
                 </span>
               )}
             </div>

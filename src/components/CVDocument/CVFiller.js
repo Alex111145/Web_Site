@@ -153,6 +153,30 @@ export async function generateFilledCV() {
     curY -= gap;
   });
 
+  // ── TITLE: cover template title, draw new one centered in left area ──
+  page.drawRectangle({ x: 0, y: 654, width: 342, height: 57, color: white });
+  const titleText = 'Master in Machine Learning';
+  const titleSize = 20;
+  const titleW = reg.widthOfTextAtSize(titleText, titleSize);
+  page.drawText(titleText, { x: (342 - titleW) / 2, y: 672, size: titleSize, font: reg, color: black });
+
+  // ── EDUCATION: cover template entries, redraw with master on top ──
+  page.drawRectangle({ x: 245, y: 8, width: 330, height: 77, color: white });
+  const grey = rgb(0.35, 0.35, 0.35);
+  const education = [
+    { title: 'Master in Machine Learning', years: '2026 - 2028', school: 'SUPSI, Lugano and Zurich' },
+    { title: 'Bachelor of Computer Science', years: '2023 - 2026', school: 'University of Insubria' },
+    { title: 'High School Diploma in Scientific Studies', years: '2018 - 2023', school: 'Manfredini High School' },
+  ];
+  let eduY = 70;
+  education.forEach(e => {
+    page.drawText(e.title, { x: 254.8, y: eduY, size: 9.5, font: bold, color: black });
+    const yearsW = bold.widthOfTextAtSize(e.years, 9.5);
+    page.drawText(e.years, { x: 556 - yearsW, y: eduY, size: 9.5, font: bold, color: black });
+    page.drawText(e.school, { x: 266, y: eduY - 10, size: 8, font: reg, color: grey });
+    eduY -= 22;
+  });
+
   const pdfBytes = await pdfDoc.save();
   return new Blob([pdfBytes], { type: 'application/pdf' });
 }

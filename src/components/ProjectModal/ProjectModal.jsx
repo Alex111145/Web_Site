@@ -65,6 +65,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
                 {project.fullDescription}
             </p>
 
+            {project.url ? (
             <a
                 href={project.url}
                 target="_blank"
@@ -74,6 +75,11 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
                 <FiGithub />
                 <span>Source Code</span>
             </a>
+            ) : (
+            <span className="mt-4 inline-flex items-center justify-center font-semibold bg-zinc-800 text-violet-400 p-3 px-5 rounded-full w-full border border-zinc-700">
+                Soon...
+            </span>
+            )}
         </div>
       </div>
        {/* CSS untuk animasi */}
