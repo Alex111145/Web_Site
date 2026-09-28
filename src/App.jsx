@@ -61,14 +61,14 @@ function App() {
         
         {/* HERO SECTION */}
         <div className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-6 grid-cols-1">
-          <div className="animate__animated animate__fadeInUp animate__delay-3s text-white">
+          <div className="animate__animated animate__fadeInUp text-white">
             
             <h1 className="text-5xl font-bold mb-6">
               <ShinyText text="Hi I'm Alessio Gervasini" speed={3} />
             </h1>
             
             <BlurText 
-              text="Passionate about Artificial Intelligence. Beyond a strong interest in image recognition, object detection." 
+              text="Master's student at SUPSI in Zurich and Lugano, passionate about Artificial Intelligence, with a strong interest in image recognition and object detection." 
               delay={150} 
               animateBy="words" 
               className="mb-6" 
@@ -90,7 +90,7 @@ function App() {
             </div>
           </div>
 
-          <div className="md:ml-auto flex justify-center animate__animated animate__fadeInUp animate__delay-4s">
+          <div className="md:ml-auto flex justify-center animate__animated animate__fadeInUp">
             {/* MODIFICATA LA PROP NAME PER ANDARE SU DUE RIGHE */}
             <ProfileCard 
              name={
