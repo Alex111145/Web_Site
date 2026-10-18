@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  base: "/Web_Site/", // Questo deve corrispondere al nome del repository
+  base: "/", // Cloudflare Pages: sito servito dalla radice del dominio
   plugins: [react(), tailwindcss()],
 })

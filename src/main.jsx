@@ -1,19 +1,15 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import Navbar from './components/Navbar.jsx'
-import "animate.css"
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-// ..
-AOS.init();
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "@fontsource-variable/fraunces/opsz.css";
+import "@fontsource-variable/fraunces/opsz-italic.css";
+import "@fontsource-variable/manrope";
+import "@fontsource/jetbrains-mono/400.css";
+import "@fontsource/jetbrains-mono/500.css";
+import "./index.css";
+import App from "./App.jsx";
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <div className = "container mx-auto px-6">
-      <Navbar />
-      <App />
-    </div>
-  </StrictMode>,
-)
+    <App />
+  </StrictMode>
+);

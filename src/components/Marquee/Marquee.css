@@ -1,30 +1,63 @@
+.marquee {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow: hidden;
+  max-width: 100%;
+}
+
 .marquee-row {
   overflow: hidden;
-  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  padding-block: 6px; /* room for card hover lift and shadow */
+  margin-block: -6px;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
 }
 
 .marquee-track {
   display: flex;
   width: max-content;
-  animation-name: marquee-scroll;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+}
+.marquee-track.to-left { animation-name: marquee-left; }
+.marquee-track.to-right { animation-name: marquee-right; }
+
+/* pause while reading / interacting */
+.marquee-row:hover .marquee-track,
+.marquee-row:focus-within .marquee-track {
+  animation-play-state: paused;
 }
 
 .marquee-item {
   flex-shrink: 0;
   width: var(--marquee-item-width, 18rem);
-  padding: 0 0.5rem;
+  padding: 0 7px;
 }
+.marquee-item > * { height: 100%; }
 
-@keyframes marquee-scroll {
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
   from { transform: translateX(-50%); }
   to { transform: translateX(0); }
 }
 
+/* Reduced motion: static scrollable strips, no clones */
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation-play-state: paused;
+  .marquee-row {
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-mask-image: none;
+    mask-image: none;
+    padding-inline: 20px;
+    margin-inline: -20px;
   }
+  .marquee-track {
+    animation: none !important;
+    transform: none;
+  }
+  .marquee-item { scroll-snap-align: start; }
 }

@@ -99,7 +99,7 @@ export const listTools = [
 
 // --- SEZIONE PROGETTI ---
 import Project2 from "/assets/project/super.png"; 
-import Project3 from "/assets/project/artigiano.png"; 
+import Project3 from "/assets/project/artigiano.jpg"; 
 import Project4 from "/assets/project/biblo.png"; 
 import Project5 from "/assets/project/compgraph.jpg";
 import Project6 from "/assets/project/pico.jpg";
