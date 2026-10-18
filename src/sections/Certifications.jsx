@@ -24,7 +24,7 @@ const Certifications = ({ onSelect }) => (
       <Marquee
         items={listCertifications}
         rows={4}
-        secondsPerItem={10}
+        secondsPerItem={20}
         itemWidth="19rem"
         renderItem={(cert, { isClone }) => (
           <button
