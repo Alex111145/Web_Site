@@ -23,7 +23,7 @@ const Certifications = ({ onSelect }) => (
     <div data-reveal style={{ "--reveal-delay": "100ms" }} className="wrap">
       <Marquee
         items={listCertifications}
-        rows={3}
+        rows={4}
         secondsPerItem={5}
         itemWidth="19rem"
         renderItem={(cert, { isClone }) => (

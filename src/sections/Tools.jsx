@@ -22,7 +22,7 @@ const Tools = ({ onSelect }) => (
     <div data-reveal style={{ "--reveal-delay": "100ms" }} className="wrap">
       <Marquee
         items={listTools}
-        rows={3}
+        rows={6}
         itemWidth="18.5rem"
         secondsPerItem={4}
         renderItem={(tool, { isClone }) => (
