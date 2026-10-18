@@ -32,6 +32,22 @@
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Dark theme: same tokens with night values. Set by the toggle in Header
+   (data-theme on <html>, saved in localStorage "theme"); night-* stay as they are. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-paper: #101517;
+  --color-paper-2: #141B1E;
+  --color-card: #182124;
+  --color-ink: #E8ECEB;
+  --color-ink-2: #C5CDCF;
+  --color-muted: #A3AEB1;
+  --color-line: #2A3438;
+  --color-accent: #6CCBD8;
+  --color-accent-ink: #8FDAE4;
+  --color-accent-soft: #173B41;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -231,6 +247,24 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+  }
+
+  /* Dark theme fixes for the few hard-coded colours above */
+  :root[data-theme="dark"] .btn-accent { color: var(--color-night); }
+  :root[data-theme="dark"] .card-hover:hover {
+    border-color: #3E4A4F;
+    box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.7);
+  }
+  /* Portrait uses mix-blend-multiply: on a dark frame it would turn black, so its frame stays light */
+  :root[data-theme="dark"] .hero-photo {
+    --color-paper-2: #ECEAE3;
+    --color-line: #DDDAD1;
+    --color-muted: #5B6268;
+  }
+  /* Logos are drawn for a light background: keep their tiles light */
+  :root[data-theme="dark"] .logo-tile {
+    background: #F5F4EF;
+    border-color: transparent;
   }
 }
 

@@ -61,7 +61,7 @@ const Hero = ({ onDownloadCV }) => {
           </div>
 
           <div className="lg:col-span-5 hero-in w-full max-w-[26rem] mx-auto lg:max-w-none" style={{ "--d": "200ms" }}>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[20px] border border-line bg-paper-2">
+            <div className="hero-photo relative aspect-[4/5] overflow-hidden rounded-[20px] border border-line bg-paper-2">
               <div className="absolute inset-3 rounded-[12px] border border-line pointer-events-none" aria-hidden="true" />
               <span className="absolute top-5 left-5 font-mono text-[11px] uppercase tracking-[0.08em] text-muted">Lugano / Zurich</span>
               <span className="absolute top-5 right-5 font-mono text-[11px] uppercase tracking-[0.08em] text-muted">ML · 2026</span>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { IconClose, IconDownload, IconMenu } from "../components/ui/icons";
+import { IconClose, IconDownload, IconMenu, IconMoon, IconSun } from "../components/ui/icons";
 
 const links = [
   { id: "about", label: "About" },
@@ -14,6 +14,20 @@ const Header = ({ onDownloadCV }) => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
+  const [dark, setDark] = useState(() => document.documentElement.dataset.theme === "dark");
+
+  // Light/dark theme: data-theme on <html> (tokens in index.css), remembered across visits
+  useEffect(() => {
+    const root = document.documentElement;
+    if (dark) root.dataset.theme = "dark";
+    else delete root.dataset.theme;
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", dark ? "#101517" : "#F5F4EF");
+    try {
+      localStorage.setItem("theme", dark ? "dark" : "light");
+    } catch {
+      // storage blocked: the choice lasts until reload
+    }
+  }, [dark]);
 
   // Header background after a little scroll
   useEffect(() => {
@@ -97,6 +111,15 @@ const Header = ({ onDownloadCV }) => {
         </nav>
 
         <div className="flex items-center gap-2">
+          <button
+            type="button"
+            className="grid size-11 place-items-center rounded-full text-ink hover:bg-paper-2"
+            aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+            title={dark ? "Light mode" : "Dark mode"}
+            onClick={() => setDark((d) => !d)}
+          >
+            {dark ? <IconSun className="size-5" /> : <IconMoon className="size-5" />}
+          </button>
           <button
             type="button"
             onClick={onDownloadCV}

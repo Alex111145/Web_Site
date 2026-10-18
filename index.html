@@ -7,6 +7,15 @@
     <meta name="description" content="Alessio Gervasini, Master's student in Machine Learning at SUPSI and Co-Founder of SolarDino. Projects, tools, certifications and contacts." />
     <meta name="theme-color" content="#F5F4EF" />
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <script>
+      // Saved theme before first paint (toggle in Header), no light flash in dark mode
+      try {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.dataset.theme = "dark";
+          document.querySelector('meta[name="theme-color"]').content = "#101517";
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body id="home">
     <div id="root"></div>
