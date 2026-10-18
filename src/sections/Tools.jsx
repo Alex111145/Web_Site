@@ -24,7 +24,7 @@ const Tools = ({ onSelect }) => (
         items={listTools}
         rows={6}
         itemWidth="18.5rem"
-        secondsPerItem={4}
+        secondsPerItem={8}
         renderItem={(tool, { isClone }) => (
           <button
             type="button"
