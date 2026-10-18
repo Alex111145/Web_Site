@@ -2,8 +2,8 @@ import { solarDinoData } from "../data";
 import { IconArrowUpRight } from "../components/ui/icons";
 
 const facts = [
-  { label: "Technology", text: "Thermal AI — faulty & dirty modules" },
-  { label: "Model", text: "B2B SaaS + on-demand B2C" },
+  { label: "Technology", text: "Drones + AI" },
+  { label: "Model", text: "B2B SaaS + B2C" },
   { label: "Network", text: "100+ collaborators" },
 ];
 
