@@ -23,10 +23,27 @@
 .marquee-track.to-left { animation-name: marquee-left; }
 .marquee-track.to-right { animation-name: marquee-right; }
 
-/* pause while reading / interacting */
-.marquee-row:hover .marquee-track,
-.marquee-row:focus-within .marquee-track {
+/* pause while reading / interacting (hover only with a real pointer:
+   on touch screens :hover sticks after a tap and would freeze the row) */
+@media (hover: hover) {
+  .marquee-row:hover .marquee-track {
+    animation-play-state: paused;
+  }
+}
+.marquee-row:focus-within .marquee-track,
+.marquee-row.is-dragging .marquee-track {
   animation-play-state: paused;
+}
+
+/* swipeable rows: horizontal drag moves the row, vertical drag scrolls the page */
+.marquee-row.is-swipe {
+  touch-action: pan-y pinch-zoom;
+}
+.marquee-row.is-dragging,
+.marquee-row.is-dragging * {
+  cursor: grabbing !important;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .marquee-item {
