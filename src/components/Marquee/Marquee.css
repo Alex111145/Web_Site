@@ -38,6 +38,7 @@
 /* swipeable rows: horizontal drag moves the row, vertical drag scrolls the page */
 .marquee-row.is-swipe {
   touch-action: pan-y pinch-zoom;
+  overscroll-behavior-x: contain; /* trackpad swipe must not trigger browser back/forward */
 }
 .marquee-row.is-dragging,
 .marquee-row.is-dragging * {

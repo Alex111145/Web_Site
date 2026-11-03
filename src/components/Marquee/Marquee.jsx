@@ -18,7 +18,7 @@ const useReducedMotion = () => {
 const DRAG_START_PX = 8; // horizontal movement before a press becomes a swipe
 const MAX_FLING = 3; // px/ms
 
-// Lets the user drag a row sideways (finger or mouse). The CSS animation keeps
+// Lets the user drag a row sideways (finger, mouse or trackpad). The CSS animation keeps
 // running: dragging just moves its currentTime, so the loop stays seamless.
 // dir: -1 for rows moving left, 1 for rows moving right.
 const attachSwipe = (row, durationMs, dir) => {
@@ -109,12 +109,23 @@ const attachSwipe = (row, durationMs, dir) => {
 
   const onDragStart = (e) => e.preventDefault(); // no native image drag with the mouse
 
+  // trackpad two-finger swipe (or shift + wheel) over the row moves it;
+  // mostly-vertical scrolling is left to the page
+  const onWheel = (e) => {
+    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+    e.preventDefault();
+    stopGlide();
+    const unit = e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? row.clientWidth : 1;
+    shift(-e.deltaX * unit);
+  };
+
   row.addEventListener("pointerdown", onDown);
   row.addEventListener("pointermove", onMove);
   row.addEventListener("pointerup", onUp);
   row.addEventListener("pointercancel", onCancel);
   row.addEventListener("click", onClick, true);
   row.addEventListener("dragstart", onDragStart);
+  row.addEventListener("wheel", onWheel, { passive: false });
   return () => {
     stopGlide();
     row.removeEventListener("pointerdown", onDown);
@@ -123,12 +134,14 @@ const attachSwipe = (row, durationMs, dir) => {
     row.removeEventListener("pointercancel", onCancel);
     row.removeEventListener("click", onClick, true);
     row.removeEventListener("dragstart", onDragStart);
+    row.removeEventListener("wheel", onWheel);
   };
 };
 
 // renderItem(item, { isClone }): clones are aria-hidden, cards should set tabIndex -1
-// swipe: rows can be dragged sideways with a finger or the mouse
-const Marquee = ({ items, rows, renderItem, secondsPerItem = 4, itemWidth = "18rem", fullRows = false, swipe = false }) => {
+// swipe: rows can be dragged sideways with a finger, the mouse or a trackpad
+// groupBy(item): with fullRows, items with the same key stay next to each other
+const Marquee = ({ items, rows, renderItem, secondsPerItem = 4, itemWidth = "18rem", fullRows = false, swipe = false, groupBy }) => {
   const reduced = useReducedMotion();
   const rowRefs = useRef([]);
 
@@ -136,7 +149,41 @@ const Marquee = ({ items, rows, renderItem, secondsPerItem = 4, itemWidth = "18r
     const start = Math.floor(Math.random() * items.length);
     const rotated = [...items.slice(start), ...items.slice(0, start)];
     const result = Array.from({ length: rows }, () => []);
-    if (fullRows) {
+    if (fullRows && groupBy) {
+      // every row holds all items; items sharing a group stay side by side,
+      // the groups are shuffled per row so rows differ
+      const groups = new Map();
+      items.forEach((item) => {
+        const key = groupBy(item);
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(item);
+      });
+      const list = [...groups.values()];
+      const shuffle = () => {
+        const order = list.map((_, k) => k);
+        for (let k = order.length - 1; k > 0; k--) {
+          const j = Math.floor(Math.random() * (k + 1));
+          [order[k], order[j]] = [order[j], order[k]];
+        }
+        return order;
+      };
+      // pairs of neighbouring groups (the row loops, so last -> first counts too)
+      const pairs = (order) => order.map((g, k) => `${g}>${order[(k + 1) % order.length]}`);
+      // pick per row the order sharing the fewest neighbour pairs with the rows
+      // already built, so two rows never run the same sequence in parallel
+      const used = new Set();
+      result.forEach((line) => {
+        let best = null;
+        let bestScore = Infinity;
+        for (let attempt = 0; attempt < 300 && bestScore > 0; attempt++) {
+          const order = shuffle();
+          const score = pairs(order).filter((p) => used.has(p)).length;
+          if (score < bestScore) [best, bestScore] = [order, score];
+        }
+        pairs(best).forEach((p) => used.add(p));
+        best.forEach((g) => line.push(...list[g]));
+      });
+    } else if (fullRows) {
       // every row holds all items, each row in a different order (step through
       // the list with a different stride coprime to its length), so rows never
       // show the same sequence side by side
@@ -157,7 +204,7 @@ const Marquee = ({ items, rows, renderItem, secondsPerItem = 4, itemWidth = "18r
         const duration = Math.max(line.length, 4) * secondsPerItem;
         return { line, duration, delay: -Math.random() * duration };
       });
-  }, [items, rows, secondsPerItem, fullRows]);
+  }, [items, rows, secondsPerItem, fullRows, groupBy]);
 
   useEffect(() => {
     if (!swipe || reduced) return;

@@ -3,6 +3,7 @@ import { listCertifications } from "../data";
 
 const acquired = listCertifications.filter((c) => c.certImage).length;
 const inProgress = listCertifications.length - acquired;
+const byIssuer = (cert) => cert.issuer;
 
 const Certifications = ({ onSelect }) => (
   <section id="certifications" className="section bg-paper-2">
@@ -25,6 +26,7 @@ const Certifications = ({ onSelect }) => (
         items={listCertifications}
         rows={6}
         fullRows
+        groupBy={byIssuer}
         swipe
         secondsPerItem={14}
         itemWidth="19rem"
