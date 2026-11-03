@@ -23,6 +23,7 @@ const Tools = ({ onSelect }) => (
       <Marquee
         items={listTools}
         rows={6}
+        rowsDesktop={4}
         itemWidth="18.5rem"
         secondsPerItem={16}
         renderItem={(tool, { isClone }) => (

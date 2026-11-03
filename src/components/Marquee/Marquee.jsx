@@ -1,19 +1,20 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import "./Marquee.css";
 
-// True when the user prefers reduced motion (rows become scrollable strips)
-const useReducedMotion = () => {
-  const [reduced, setReduced] = useState(
-    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  );
+const useMediaQuery = (query) => {
+  const [matches, setMatches] = useState(() => typeof window !== "undefined" && window.matchMedia(query).matches);
   useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const onChange = (e) => setReduced(e.matches);
+    const mq = window.matchMedia(query);
+    const onChange = (e) => setMatches(e.matches);
+    setMatches(mq.matches);
     mq.addEventListener("change", onChange);
     return () => mq.removeEventListener("change", onChange);
-  }, []);
-  return reduced;
+  }, [query]);
+  return matches;
 };
+
+const DESKTOP = "(min-width: 768px)";
+const MIN_GROUP_ROW = 6; // short grouped rows are repeated so the loop never shows a gap
 
 const DRAG_START_PX = 8; // horizontal movement before a press becomes a swipe
 const MAX_FLING = 3; // px/ms
@@ -139,72 +140,71 @@ const attachSwipe = (row, durationMs, dir) => {
 };
 
 // renderItem(item, { isClone }): clones are aria-hidden, cards should set tabIndex -1
+// rows: rows on phones; rowsDesktop: rows from 768px up (defaults to rows)
 // swipe: rows can be dragged sideways with a finger, the mouse or a trackpad
-// groupBy(item): with fullRows, items with the same key stay next to each other
-const Marquee = ({ items, rows, renderItem, secondsPerItem = 4, itemWidth = "18rem", fullRows = false, swipe = false, groupBy }) => {
-  const reduced = useReducedMotion();
+// groupBy(item): each group stays whole on a single row (groups are spread
+// over the rows so they hold about the same number of items)
+const Marquee = ({
+  items,
+  rows,
+  rowsDesktop,
+  renderItem,
+  secondsPerItem = 4,
+  itemWidth = "18rem",
+  fullRows = false,
+  swipe = false,
+  groupBy,
+}) => {
+  const reduced = useMediaQuery("(prefers-reduced-motion: reduce)");
+  const isDesktop = useMediaQuery(DESKTOP);
+  const rowCount = isDesktop && rowsDesktop ? rowsDesktop : rows;
   const rowRefs = useRef([]);
 
   const lines = useMemo(() => {
     const start = Math.floor(Math.random() * items.length);
     const rotated = [...items.slice(start), ...items.slice(0, start)];
-    const result = Array.from({ length: rows }, () => []);
-    if (fullRows && groupBy) {
-      // every row holds all items; items sharing a group stay side by side,
-      // the groups are shuffled per row so rows differ
+    const result = Array.from({ length: rowCount }, () => []);
+    if (groupBy) {
       const groups = new Map();
       items.forEach((item) => {
         const key = groupBy(item);
         if (!groups.has(key)) groups.set(key, []);
         groups.get(key).push(item);
       });
-      const list = [...groups.values()];
-      const shuffle = () => {
-        const order = list.map((_, k) => k);
-        for (let k = order.length - 1; k > 0; k--) {
-          const j = Math.floor(Math.random() * (k + 1));
-          [order[k], order[j]] = [order[j], order[k]];
-        }
-        return order;
-      };
-      // pairs of neighbouring groups (the row loops, so last -> first counts too)
-      const pairs = (order) => order.map((g, k) => `${g}>${order[(k + 1) % order.length]}`);
-      // pick per row the order sharing the fewest neighbour pairs with the rows
-      // already built, so two rows never run the same sequence in parallel
-      const used = new Set();
-      result.forEach((line) => {
-        let best = null;
-        let bestScore = Infinity;
-        for (let attempt = 0; attempt < 300 && bestScore > 0; attempt++) {
-          const order = shuffle();
-          const score = pairs(order).filter((p) => used.has(p)).length;
-          if (score < bestScore) [best, bestScore] = [order, score];
-        }
-        pairs(best).forEach((p) => used.add(p));
-        best.forEach((g) => line.push(...list[g]));
-      });
+      // biggest groups first, each on the row that holds the fewest items so far
+      const totals = result.map(() => 0);
+      [...groups.values()]
+        .sort((x, y) => y.length - x.length)
+        .forEach((group) => {
+          const r = totals.indexOf(Math.min(...totals));
+          result[r].push(...group);
+          totals[r] += group.length;
+        });
     } else if (fullRows) {
       // every row holds all items, each row in a different order (step through
       // the list with a different stride coprime to its length), so rows never
       // show the same sequence side by side
       const n = rotated.length;
-      const gcd = (a, b) => (b ? gcd(b, a % b) : a);
+      const gcd = (x, y) => (y ? gcd(y, x % y) : x);
       const strides = [];
-      for (let k = 1; k < Math.max(n, 2) && strides.length < rows; k++) if (gcd(k, n) === 1) strides.push(k);
+      for (let k = 1; k < Math.max(n, 2) && strides.length < rowCount; k++) if (gcd(k, n) === 1) strides.push(k);
       result.forEach((line, r) => {
         const stride = strides[r % strides.length] || 1;
         for (let j = 0; j < n; j++) line.push(rotated[(r * 2 + j * stride) % n]);
       });
     } else {
-      rotated.forEach((item, i) => result[i % rows].push(item));
+      rotated.forEach((item, i) => result[i % rowCount].push(item));
     }
     return result
       .filter((line) => line.length > 0)
       .map((line) => {
-        const duration = Math.max(line.length, 4) * secondsPerItem;
-        return { line, duration, delay: -Math.random() * duration };
+        const count = line.length; // real items, the rest are repeats
+        const filled = [...line];
+        if (groupBy) while (filled.length < MIN_GROUP_ROW) filled.push(...line);
+        const duration = Math.max(filled.length, 4) * secondsPerItem;
+        return { line: filled, count, duration, delay: -Math.random() * duration };
       });
-  }, [items, rows, secondsPerItem, fullRows, groupBy]);
+  }, [items, rowCount, secondsPerItem, fullRows, groupBy]);
 
   useEffect(() => {
     if (!swipe || reduced) return;
@@ -217,8 +217,8 @@ const Marquee = ({ items, rows, renderItem, secondsPerItem = 4, itemWidth = "18r
 
   return (
     <div className="marquee" style={{ "--marquee-item-width": `min(${itemWidth}, 82vw)` }}>
-      {lines.map(({ line, duration, delay }, i) => {
-        const track = reduced ? line : [...line, ...line];
+      {lines.map(({ line, count, duration, delay }, i) => {
+        const track = reduced ? line.slice(0, count) : [...line, ...line];
         return (
           <div
             key={i}
@@ -230,7 +230,7 @@ const Marquee = ({ items, rows, renderItem, secondsPerItem = 4, itemWidth = "18r
               style={reduced ? undefined : { animationDuration: `${duration}s`, animationDelay: `${delay}s` }}
             >
               {track.map((item, j) => {
-                const isClone = j >= line.length;
+                const isClone = j >= count;
                 return (
                   <div key={j} className="marquee-item" aria-hidden={isClone || undefined}>
                     {renderItem(item, { isClone })}
