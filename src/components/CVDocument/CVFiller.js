@@ -155,16 +155,21 @@ export async function generateFilledCV() {
 
   // ── TITLE: cover template title, draw new one centered in left area ──
   page.drawRectangle({ x: 0, y: 654, width: 342, height: 57, color: white });
-  const titleText = 'Master in Machine Learning';
+  // Currently attending the Master at SUPSI (not yet graduated)
+  const titleText = "Master's Student at SUPSI";
   const titleSize = 20;
   const titleW = reg.widthOfTextAtSize(titleText, titleSize);
-  page.drawText(titleText, { x: (342 - titleW) / 2, y: 672, size: titleSize, font: reg, color: black });
+  page.drawText(titleText, { x: (342 - titleW) / 2, y: 682, size: titleSize, font: reg, color: black });
+  const subText = 'Machine Learning · Computer Vision';
+  const subSize = 11;
+  const subW = reg.widthOfTextAtSize(subText, subSize);
+  page.drawText(subText, { x: (342 - subW) / 2, y: 663, size: subSize, font: reg, color: rgb(0.35, 0.35, 0.35) });
 
   // ── EDUCATION: cover template entries, redraw with master on top ──
   page.drawRectangle({ x: 245, y: 8, width: 330, height: 77, color: white });
   const grey = rgb(0.35, 0.35, 0.35);
   const education = [
-    { title: 'Master in Machine Learning', years: '2026 - 2028', school: 'SUPSI, Lugano and Zurich' },
+    { title: 'Master in Machine Learning (ongoing)', years: '2026 - 2028', school: 'SUPSI, Lugano and Zurich · currently attending' },
     { title: 'Bachelor of Computer Science', years: '2023 - 2026', school: 'University of Insubria' },
     { title: 'High School Diploma in Scientific Studies', years: '2018 - 2023', school: 'Manfredini High School' },
   ];

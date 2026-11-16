@@ -3,7 +3,7 @@ import { IconDownload, IconArrowRight } from "../components/ui/icons";
 import "./hero.css";
 
 const facts = [
-  "M.Sc. Machine Learning — SUPSI",
+  "M.Sc. Machine Learning (ongoing) — SUPSI",
   "B.Sc. Computer Science — Insubria",
   "Co-Founder — SolarDino",
 ];
@@ -74,7 +74,7 @@ const Hero = ({ onDownloadCV }) => {
             <div className="card mt-3 p-4 flex items-center justify-between gap-3">
               <div className="min-w-0">
                 <p className="font-display text-ink text-xl leading-tight">Alessio Gervasini</p>
-                <p className="text-sm text-ink-2">Master in Machine Learning</p>
+                <p className="text-sm text-ink-2">Master&rsquo;s student · SUPSI</p>
                 <p className="font-mono text-xs text-muted mt-1 flex items-center gap-2 flex-wrap">
                   @alessiogervasini
                   <span className="tag"><span className="hero-dot w-2 h-2 rounded-full" style={{ background: "#2F9E6B" }} aria-hidden="true" />Online</span>

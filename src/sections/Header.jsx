@@ -88,7 +88,7 @@ const Header = ({ onDownloadCV }) => {
             Alessio Gervasini
           </span>
           <span className="hidden font-mono text-[11px] uppercase tracking-[0.08em] text-muted sm:inline">
-            ML · SUPSI
+            MSc student · SUPSI
           </span>
         </a>
 
