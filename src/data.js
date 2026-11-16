@@ -104,7 +104,7 @@ import Project3 from "/assets/project/artigiano.jpg";
 import Project4 from "/assets/project/biblo.png"; 
 import Project5 from "/assets/project/compgraph.jpg";
 import Project6 from "/assets/project/pico.jpg";
-import Project7 from "/assets/project/climbing.jpg";
+import Project7 from "/assets/project/visual_slam.jpg";
 
 // --- AZIENDA / SOFTWARE DI PUNTA ---
 import SolarDinoImg from "/assets/project/solar.png"; 
@@ -121,10 +121,10 @@ export const listProyek = [
   {
     id: 7,
     image: Project7,
-    title: "Visual Odometry for Climbing Robots",
-    subtitle: "Camera based motion tracking for wall climbing robots...",
-    fullDescription: "Research project with the SUPSI robotics lab in Lugano: camera based motion estimation (visual odometry and SLAM) for robots that climb ship hulls and wind turbine blades, where wheel sensors fail due to slipping.",
-    anno: "2027",
+    title: "Visual Odometry & SLAM for Ground Robots",
+    subtitle: "A downward camera tracks a wheeled robot from the floor texture...",
+    fullDescription: "Project at SUPSI: visual odometry and SLAM for a wheeled robot with a downward OAK-D Pro camera. ORB/SIFT keyframes vs AI models (VGGT), loop closures and an SE(2) pose graph: about 1 cm error over 4 m.",
+    anno: "2026",
     soon: true,
     borderColor: "#06B6D4",
     gradient: "linear-gradient(145deg, #06B6D4, #000)",
@@ -146,8 +146,8 @@ export const listProyek = [
     id: 6,
     image: Project6,
     title: "Pico W IoT Monitoring",
-    subtitle: "Raspberry Pi Pico W sensor data on a live web dashboard...",
-    fullDescription: "Project at SUPSI: a Raspberry Pi Pico W sends temperature and humidity over MQTT to a FastAPI web app with live charts and LLM recommendations, deployed with Docker and GitLab CI/CD.",
+    subtitle: "Pico W sensor data over MQTT to a web dashboard with LLM advice...",
+    fullDescription: "Team project at SUPSI: a Pico W with an SHT3x sensor sends temperature and humidity over MQTT to a FastAPI web app with live charts and LLM advice via MCP. C firmware tested on the board, Docker and GitLab CI/CD.",
     anno: "2026",
     soon: true,
     borderColor: "#C51A4A",
