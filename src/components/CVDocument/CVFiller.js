@@ -24,12 +24,15 @@ function wrapText(text, maxChars) {
   return lines;
 }
 
+// short text for the CV (max 2 lines), the site modal keeps fullDescription
+const cvText = (p) => p.cvDescription || p.fullDescription;
+
 function calcProjHeight(ts, projs) {
   const ss = ts * SUB_RATIO;
   const chars = Math.floor(275 / (ss * 0.52));
   const tlh = ts * 1.4;
   const slh = ss * 1.3;
-  return projs.reduce((sum, p) => sum + tlh + wrapText(p.fullDescription, chars).length * slh, 0);
+  return projs.reduce((sum, p) => sum + tlh + wrapText(cvText(p), chars).length * slh, 0);
 }
 
 function findProjTitleSize(projs) {
@@ -140,7 +143,7 @@ export async function generateFilledCV() {
     });
     curY -= tlh;
 
-    wrapText(p.fullDescription, chars).forEach((line, li) => {
+    wrapText(cvText(p), chars).forEach((line, li) => {
       if (li === 0) {
         page.drawText('• ', { x: PROJ_X, y: curY, size: ss, font: bold, color: black });
         page.drawText(line, { x: PROJ_X + bulletW, y: curY, size: ss, font: reg, color: black });

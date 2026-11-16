@@ -18,8 +18,9 @@ const Projects = ({ onSelect }) => (
     <div data-reveal style={{ "--reveal-delay": "100ms" }} className="wrap">
       <Marquee
         items={listProyek}
-        rows={1}
-        secondsPerItem={5}
+        rows={2}
+        fullRows
+        secondsPerItem={10}
         itemWidth="21rem"
         renderItem={(project, { isClone }) => (
           <button

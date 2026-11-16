@@ -25,7 +25,7 @@ const Certifications = ({ onSelect }) => (
       <Marquee
         items={listCertifications}
         rows={6}
-        rowsDesktop={3}
+        rowsDesktop={5}
         groupBy={byIssuer}
         swipe
         secondsPerItem={14}
