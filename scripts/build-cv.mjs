@@ -62,13 +62,13 @@ a{color:inherit;text-decoration:none}
 .abs{position:absolute}
 .blk-top{left:344pt;top:0;width:251.3pt;height:208pt;background:var(--navy)}
 .blk-left{left:0;top:196pt;width:226pt;height:645.9pt;background:var(--navy)}
-.photo{left:388.6pt;top:43.7pt;width:160.6pt;height:185.6pt;border-radius:80.3pt;border:1.6pt solid #f4f6f7;background:#e9e8e6;object-fit:cover;object-position:center 0%;box-shadow:0 0 0 .5pt #b7bfc8}
+.photo{left:388.6pt;top:43.7pt;width:160.6pt;height:185.6pt;border-radius:80.3pt;border:1.6pt solid #f4f6f7;background:#eaeae8;object-fit:cover;object-position:calc(50% + 6pt) 0%;box-shadow:0 0 0 .5pt #b7bfc8}
 h1{left:36pt;top:46pt;font-family:'Outfit',sans-serif;color:var(--navy);line-height:1.02}
 h1 .a{display:block;font-weight:300;font-size:36pt;letter-spacing:.5pt}
 h1 .b{display:block;font-weight:700;font-size:38pt;letter-spacing:.3pt}
-.head2{left:36pt;top:145pt;width:270pt;text-align:center}
+.head2{left:36pt;top:138pt;width:270pt;text-align:center}
 .title{font-size:15pt;color:#111827;font-weight:400}
-.sub{font-size:8.6pt;color:#6b7280;letter-spacing:.5pt;margin-top:1.5pt}
+.sub{font-size:8.6pt;color:#6b7280;letter-spacing:.3pt;margin-top:3pt;font-style:italic;text-wrap:balance;line-height:1.35}
 .side h3{font-family:'Outfit',sans-serif;font-weight:700;font-size:14pt;letter-spacing:1.4pt;color:#fff;line-height:1.2}
 .about{left:25.3pt;top:258pt;width:192pt;font-size:8.2pt;color:#eef3f9}
 .c{left:21.5pt;width:200pt;display:flex;gap:9pt;align-items:center;font-size:7.4pt;color:#fff}
@@ -104,6 +104,7 @@ h1 .b{display:block;font-weight:700;font-size:38pt;letter-spacing:.3pt}
 <h1 class="abs"><span class="a">ALESSIO</span><span class="b">GERVASINI</span></h1>
 <div class="abs head2">
   <div class="title">AI and Computer Vision Specialist</div>
+  <div class="sub">The difference between a junior and a senior is 10,000 failed experiments.</div>
 </div>
 
 <div class="side">
