@@ -10,8 +10,6 @@ import Tools8 from "/assets/tools/agisoft.png";
 import Tools9 from "/assets/tools/pix4d.png";     
 import Tools10 from "/assets/tools/rete.png";          
 import Tools11 from "/assets/tools/yolo.png";        
-import Tools12 from "/assets/tools/js.png"; 
-import Tools13 from "/assets/tools/css.png";
 import Tools14 from "/assets/tools/robo.png"; 
 import Tools15 from "/assets/tools/rete.png";
 import Tools16 from "/assets/tools/s3.png";
@@ -19,7 +17,6 @@ import Tools18 from "/assets/tools/docker.png";
 import Tools19 from "/assets/tools/kub.png";
 import Tools20 from "/assets/tools/plc.jpg";
 import Tools21 from "/assets/tools/runpod.png";
-import Tools22 from "/assets/tools/amazonq.png";
 import Tools23 from "/assets/tools/amazoniam.png";
 import Tools24 from "/assets/tools/textract.png";
 import Tools25 from "/assets/tools/vertex.png";
@@ -66,8 +63,6 @@ export const listTools = [
   { id: 2,  gambar: Tools2,  nama: "GitHub",                ket: "Repository",                        dad: "200",  done: true,  desc: "Version control platform used for source code management, collaboration and CI/CD pipelines." },
   { id: 3,  gambar: Tools3,  nama: "Java",                  ket: "Language",                          dad: "300",  done: true,  desc: "Object-oriented language used for building robust backend applications, algorithms and university-level projects." },
   { id: 4,  gambar: Tools4,  nama: "Python",                ket: "Language",                          dad: "400",  done: true,  desc: "Main language for AI, Machine Learning and data science projects. Used with libraries such as TensorFlow, PyTorch and OpenCV." },
-  { id: 12, gambar: Tools12, nama: "JavaScript",            ket: "Web Language",                      dad: "450",  done: true,  desc: "Used for building interactive web applications and frontend logic, including this portfolio." },
-  { id: 13, gambar: Tools13, nama: "CSS",                   ket: "Styling",                           dad: "480",  done: true,  desc: "Used for designing responsive and modern user interfaces, including animations and layout systems like Flexbox and Grid." },
   { id: 5,  gambar: Tools5,  nama: "SQL",                   ket: "Database",                          dad: "500",  done: true,  desc: "Used for relational database design and querying in both academic and personal projects." },
   { id: 14, gambar: Tools14, nama: "Roboflow",              ket: "Computer Vision Tool",              dad: "550",  done: true,  desc: "Platform used to label, augment and export datasets for training custom object detection and segmentation models." },
   { id: 15, gambar: Tools15, nama: "GAN",                   ket: "Generative Adversarial Networks",   dad: "610",  done: true,  desc: "Applied generative deep learning techniques for image synthesis and data augmentation in AI research projects." },
@@ -82,7 +77,6 @@ export const listTools = [
   { id: 19, gambar: Tools19, nama: "Kubernetes",            ket: "Container Orchestration",           dad: "1600", done: false, desc: "Open-source system for automating deployment, scaling and management of containerized applications across clusters of machines." },
   { id: 20, gambar: Tools20, nama: "PLC Programming",       ket: "Industrial Automation",             dad: "1700", done: false, desc: "Programmable Logic Controllers are used to automate industrial processes and machinery. PLC programming enables real-time control of production lines, robotics, SCADA systems and critical infrastructure in manufacturing and energy sectors." },
   { id: 21, gambar: Tools21, nama: "RunPod",               ket: "GPU Cloud Platform",                dad: "1800", done: true,  desc: "Cloud platform for renting on-demand and spot GPUs to train, fine-tune and deploy machine learning models at scale without managing physical infrastructure." },
-  { id: 22, gambar: Tools22, nama: "Amazon Q Business",   ket: "AI Assistant",                      dad: "1900", done: true, desc: "AWS generative AI-powered assistant that connects to enterprise data sources to answer questions, summarize content and automate tasks across business applications." },
   { id: 23, gambar: Tools23, nama: "IAM Identity Center", ket: "AWS Security",                     dad: "2000", done: false, desc: "AWS service for centrally managing workforce identities and access to multiple AWS accounts and applications through single sign-on." },
   { id: 24, gambar: Tools24, nama: "Amazon Textract",    ket: "Document AI",                       dad: "2100", done: false, desc: "AWS machine learning service that automatically extracts text, handwriting and structured data from scanned documents, PDFs and images without manual configuration." },
   { id: 25, gambar: Tools25, nama: "Vertex AI",          ket: "Google Cloud AI Platform",           dad: "2200", done: false, desc: "Google Cloud's unified AI platform for building, deploying and scaling machine learning models and generative AI applications with managed infrastructure and MLOps tools." },
