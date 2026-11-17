@@ -73,7 +73,6 @@ h1 .b{display:block;font-weight:700;font-size:38pt;letter-spacing:.3pt}
 .side h3{font-family:'Outfit',sans-serif;font-weight:700;font-size:14pt;letter-spacing:1.4pt;color:#fff;line-height:1.2}
 .about{left:25.3pt;top:258pt;width:192pt;font-size:8.2pt;color:#eef3f9}
 .sd{left:25.3pt;top:474pt;width:192pt;font-size:8pt;line-height:1.4;color:#eef3f9}
-.sd a{display:block;margin-top:2pt;color:#fff;font-size:7.6pt}
 .c{left:21.5pt;width:200pt;display:flex;gap:9pt;align-items:center;font-size:7.4pt;color:#fff}
 .c i{flex:none;width:11pt;height:11pt;background:#fcfcfc;border-radius:1.5pt;display:flex;align-items:center;justify-content:center}
 .c svg{width:8pt;height:8pt;stroke:var(--navy);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
@@ -122,7 +121,8 @@ h1 .b{display:block;font-weight:700;font-size:38pt;letter-spacing:.3pt}
   <div class="abs c" style="top:421pt"><i><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></i><a href="https://alessiogervasini.pages.dev">https://alessiogervasini.pages.dev</a></div>
 
   <h3 class="abs" style="left:21.7pt;top:445pt">SolarDino</h3>
-  <div class="abs sd">${esc(SOLARDINO.text)}<a href="${SOLARDINO.url}">${esc(SOLARDINO.url)}</a></div>
+  <div class="abs sd">${esc(SOLARDINO.text)}</div>
+  <div class="abs c" style="top:500pt"><i><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></i><a href="${SOLARDINO.url}">${esc(SOLARDINO.url)}</a></div>
 
   <h3 class="abs" style="left:25.3pt;top:525pt">Skills</h3>
   <div class="abs skills">${skills.map((s) => `<span>${esc(s)}</span>`).join('')}</div>
