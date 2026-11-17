@@ -16,7 +16,7 @@ const CHROME = process.env.CHROME_PATH || '/Applications/Google Chrome.app/Conte
 
 // ── fixed parts of the CV (not in data.js) ──
 const ABOUT = 'Co-Founder SolarDino | Passionate about Artificial Intelligence. Beyond a strong interest in image recognition and object detection.';
-const SOLARDINO = { text: 'Italian company using drones and AI for inspection, mapping and 3D modeling.', url: 'https://www.solardino.it' };
+const SOLARDINO = { text: 'Italian company using drones and in-house AI for inspection, mapping and 3D modeling.', url: 'https://www.solardino.it' };
 const HOBBIES = ['Volleyball', 'Reading AI Papers', 'Pilot & Developer DJI', 'Object Detection'];
 const EDUCATION = [
   { title: 'Master in Machine Learning (ongoing)', years: '2026 - 2028', school: 'SUPSI · Lugano, Zurich (CH)' },
