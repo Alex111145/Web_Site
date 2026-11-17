@@ -15,7 +15,8 @@ const OUT = path.join(root, 'public/assets/Alessio_Gervasini_CV.pdf');
 const CHROME = process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 
 // ── fixed parts of the CV (not in data.js) ──
-const ABOUT = 'Co-Founder SolarDino.it | Passionate about Artificial Intelligence. Beyond a strong interest in image recognition and object detection.';
+const ABOUT = 'Co-Founder SolarDino | Passionate about Artificial Intelligence. Beyond a strong interest in image recognition and object detection.';
+const SOLARDINO = { text: 'Italian company using drones and AI for inspection, mapping and 3D modeling.', url: 'https://www.solardino.it' };
 const HOBBIES = ['Volleyball', 'Reading AI Papers', 'Pilot & Developer DJI', 'Object Detection'];
 const EDUCATION = [
   { title: 'Master in Machine Learning (ongoing)', years: '2026 - 2028', school: 'SUPSI · Lugano, Zurich (CH)' },
@@ -40,9 +41,9 @@ const certs = listCertifications
   .sort((a, b) => Number(b.cvSortYear ?? b.anno) - Number(a.cvSortYear ?? a.anno));
 const projects = listProyek.map((p) => ({ title: p.title, anno: p.anno, text: p.cvDescription || p.fullDescription }));
 
-// skills: 2 columns, long names on the left; rows shrink when the list grows (box 527pt → 723pt)
+// skills: 2 columns, long names on the left; rows shrink when the list grows (box 553pt → 718pt)
 const skillRows = Math.max(1, Math.ceil(skills.length / 2));
-const skillRowH = Math.min(14, 196 / skillRows);
+const skillRowH = Math.min(14, 165 / skillRows);
 const skillFont = Math.min(7.6, skillRowH * 0.54);
 
 const item = (t, y, sub, cls) =>
@@ -71,10 +72,12 @@ h1 .b{display:block;font-weight:700;font-size:38pt;letter-spacing:.3pt}
 .sub{font-size:7.6pt;color:#6b7280;letter-spacing:0;margin:3pt -40pt 0;font-style:italic;white-space:nowrap;line-height:1.35}
 .side h3{font-family:'Outfit',sans-serif;font-weight:700;font-size:14pt;letter-spacing:1.4pt;color:#fff;line-height:1.2}
 .about{left:25.3pt;top:258pt;width:192pt;font-size:8.2pt;color:#eef3f9}
+.sd{left:25.3pt;top:474pt;width:192pt;font-size:8pt;line-height:1.4;color:#eef3f9}
+.sd a{display:block;margin-top:2pt;color:#93c5fd;font-size:7.6pt}
 .c{left:21.5pt;width:200pt;display:flex;gap:9pt;align-items:center;font-size:7.4pt;color:#fff}
 .c i{flex:none;width:11pt;height:11pt;background:#fcfcfc;border-radius:1.5pt;display:flex;align-items:center;justify-content:center}
 .c svg{width:8pt;height:8pt;stroke:var(--navy);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.skills{left:25pt;top:527pt;width:195pt;display:grid;grid-template-columns:115pt 80pt;grid-auto-flow:column;grid-template-rows:repeat(${skillRows},${skillRowH.toFixed(2)}pt);font-size:${skillFont.toFixed(2)}pt;color:#fff}
+.skills{left:25pt;top:553pt;width:195pt;display:grid;grid-template-columns:115pt 80pt;grid-auto-flow:column;grid-template-rows:repeat(${skillRows},${skillRowH.toFixed(2)}pt);font-size:${skillFont.toFixed(2)}pt;color:#fff}
 .skills span{line-height:${skillRowH.toFixed(2)}pt}
 .skills span,.hob span{position:relative;padding-left:8pt;white-space:nowrap}
 .hob span{line-height:14pt}
@@ -111,14 +114,17 @@ h1 .b{display:block;font-weight:700;font-size:38pt;letter-spacing:.3pt}
   <h3 class="abs" style="left:21.7pt;top:225pt">About Me</h3>
   <p class="abs about">${esc(ABOUT)}</p>
 
-  <h3 class="abs" style="left:21.7pt;top:333pt">Contact</h3>
-  <div class="abs c" style="top:366pt"><i><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></i><a href="tel:+393483476847">+39 348 347 68 47</a></div>
-  <div class="abs c" style="top:390.5pt"><i><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v6M8 7.5v.01M12 17v-6M12 13a3 3 0 0 1 6 0v4"/></svg></i><a href="https://www.linkedin.com/in/891740368">https://www.linkedin.com/in/891740368</a></div>
-  <div class="abs c" style="top:415pt"><i><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></i><a href="mailto:agervasini1@gmail.com">agervasini1@gmail.com</a></div>
-  <div class="abs c" style="top:439.5pt"><i><svg viewBox="0 0 24 24"><path d="M8 18l-5-6 5-6M16 6l5 6-5 6"/></svg></i><a href="https://github.com/Alex111145">https://github.com/Alex111145</a></div>
-  <div class="abs c" style="top:464pt"><i><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></i><a href="https://alessiogervasini.pages.dev">https://alessiogervasini.pages.dev</a></div>
+  <h3 class="abs" style="left:21.7pt;top:307pt">Contact</h3>
+  <div class="abs c" style="top:337pt"><i><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></i><a href="tel:+393483476847">+39 348 347 68 47</a></div>
+  <div class="abs c" style="top:358pt"><i><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v6M8 7.5v.01M12 17v-6M12 13a3 3 0 0 1 6 0v4"/></svg></i><a href="https://www.linkedin.com/in/891740368">https://www.linkedin.com/in/891740368</a></div>
+  <div class="abs c" style="top:379pt"><i><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></i><a href="mailto:agervasini1@gmail.com">agervasini1@gmail.com</a></div>
+  <div class="abs c" style="top:400pt"><i><svg viewBox="0 0 24 24"><path d="M8 18l-5-6 5-6M16 6l5 6-5 6"/></svg></i><a href="https://github.com/Alex111145">https://github.com/Alex111145</a></div>
+  <div class="abs c" style="top:421pt"><i><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></i><a href="https://alessiogervasini.pages.dev">https://alessiogervasini.pages.dev</a></div>
 
-  <h3 class="abs" style="left:25.3pt;top:499pt">Skills</h3>
+  <h3 class="abs" style="left:21.7pt;top:445pt">SolarDino</h3>
+  <div class="abs sd">${esc(SOLARDINO.text)}<a href="${SOLARDINO.url}">${esc(SOLARDINO.url)}</a></div>
+
+  <h3 class="abs" style="left:25.3pt;top:525pt">Skills</h3>
   <div class="abs skills">${skills.map((s) => `<span>${esc(s)}</span>`).join('')}</div>
 
   <h3 class="abs" style="left:25.3pt;top:732pt">Hobbies</h3>
