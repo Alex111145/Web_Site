@@ -107,7 +107,7 @@ h1 .b{display:block;font-weight:700;font-size:38pt;letter-spacing:.3pt}
 <h1 class="abs"><span class="a">ALESSIO</span><span class="b">GERVASINI</span></h1>
 <div class="abs head2">
   <div class="title">AI and Computer Vision Specialist</div>
-  <div class="sub">The difference between a junior and a senior is 10,000 failed experiments.</div>
+  <div class="sub">“The difference between a junior and a senior is 10,000 failed experiments.”</div>
 </div>
 
 <div class="side">
