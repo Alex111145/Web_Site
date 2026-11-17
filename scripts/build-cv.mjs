@@ -73,7 +73,7 @@ h1 .b{display:block;font-weight:700;font-size:38pt;letter-spacing:.3pt}
 .side h3{font-family:'Outfit',sans-serif;font-weight:700;font-size:14pt;letter-spacing:1.4pt;color:#fff;line-height:1.2}
 .about{left:25.3pt;top:258pt;width:192pt;font-size:8.2pt;color:#eef3f9}
 .sd{left:25.3pt;top:474pt;width:192pt;font-size:8pt;line-height:1.4;color:#eef3f9}
-.sd a{display:block;margin-top:2pt;color:#93c5fd;font-size:7.6pt}
+.sd a{display:block;margin-top:2pt;color:#fff;font-size:7.6pt}
 .c{left:21.5pt;width:200pt;display:flex;gap:9pt;align-items:center;font-size:7.4pt;color:#fff}
 .c i{flex:none;width:11pt;height:11pt;background:#fcfcfc;border-radius:1.5pt;display:flex;align-items:center;justify-content:center}
 .c svg{width:8pt;height:8pt;stroke:var(--navy);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
