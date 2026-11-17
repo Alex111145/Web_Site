@@ -118,7 +118,7 @@ export const listProyek = [
     title: "Visual Odometry & SLAM for Ground Robots",
     subtitle: "A downward camera tracks a wheeled robot from the floor texture...",
     fullDescription: "Project at SUPSI: visual odometry and SLAM for a wheeled robot with a downward OAK-D Pro camera. ORB/SIFT keyframes vs AI models (VGGT), loop closures and an SE(2) pose graph: about 1 cm error over 4 m.",
-    cvDescription: "SUPSI project: visual odometry and SLAM for a wheeled robot with a downward camera (ORB/SIFT vs VGGT), 1 cm error over 4 m.",
+    cvDescription: "SUPSI project: visual odometry and SLAM for a wheeled robot with a downward camera (ORB/SIFT vs VGGT).",
     anno: "2026",
     soon: true,
     borderColor: "#06B6D4",
