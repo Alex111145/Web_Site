@@ -59,7 +59,7 @@ import fullCert6 from "/assets/certificati/google.png";
 import fullCert7 from "/assets/certificati/a2.png";
 
 export const listTools = [
-  { id: 1,  gambar: Tools1,  nama: "Visual Studio Code",    ket: "Code Editor",                      dad: "100",  done: true,  desc: "Primary development environment used for writing, debugging and managing code across multiple languages and frameworks." },
+  { id: 1,  gambar: Tools1,  nama: "Visual Studio Code",    ket: "Code Editor",                      dad: "100",  done: true,  cv: false, desc: "Primary development environment used for writing, debugging and managing code across multiple languages and frameworks." },
   { id: 2,  gambar: Tools2,  nama: "GitHub",                ket: "Repository",                        dad: "200",  done: true,  desc: "Version control platform used for source code management, collaboration and CI/CD pipelines." },
   { id: 3,  gambar: Tools3,  nama: "Java",                  ket: "Language",                          dad: "300",  done: true,  desc: "Object-oriented language used for building robust backend applications, algorithms and university-level projects." },
   { id: 4,  gambar: Tools4,  nama: "Python",                ket: "Language",                          dad: "400",  done: true,  desc: "Main language for AI, Machine Learning and data science projects. Used with libraries such as TensorFlow, PyTorch and OpenCV." },

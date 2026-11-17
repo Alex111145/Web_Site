@@ -1,5 +1,5 @@
 // Builds public/assets/Alessio_Gervasini_CV.pdf (blue v3 design) from src/data.js.
-// Skills = tools with done:true, certifications = the ones with a certImage,
+// Skills = tools with done:true and cv !== false, certifications = the ones with a certImage,
 // projects = listProyek (cvDescription, or fullDescription when missing).
 // Rendered with the local Google Chrome (headless print to PDF).
 // Usage: npm run cv   (also runs inside npm run deploy)
@@ -34,7 +34,7 @@ await vite.close();
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-const skills = listTools.filter((t) => t.done).map((t) => t.nama).sort((a, b) => b.length - a.length);
+const skills = listTools.filter((t) => t.done && t.cv !== false).map((t) => t.nama).sort((a, b) => b.length - a.length);
 const certs = listCertifications
   .filter((c) => c.certImage !== null)
   .sort((a, b) => Number(b.anno) - Number(a.anno));
