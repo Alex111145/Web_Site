@@ -19,8 +19,8 @@ const ABOUT = 'Co-Founder SolarDino | Passionate about Artificial Intelligence. 
 const HOBBIES = ['Volleyball', 'Reading AI Papers', 'Pilot & Developer DJI', 'Object Detection'];
 const EDUCATION = [
   { title: 'Master in Machine Learning (ongoing)', years: '2026 - 2028', school: 'SUPSI, Lugano and Zurich' },
-  { title: 'Bachelor of Computer Science', years: '2023 - 2026', school: 'University of Insubria' },
-  { title: 'High School Diploma in Scientific Studies', years: '2018 - 2023', school: 'Manfredini High School' },
+  { title: 'Bachelor of Computer Science', years: '2023 - 2026', school: 'University of Insubria, Italy' },
+  { title: 'High School Diploma in Scientific Studies', years: '2018 - 2023', school: 'Manfredini High School, Italy' },
 ];
 
 // ── data.js imports images, so load it through Vite ──
