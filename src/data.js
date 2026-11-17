@@ -30,6 +30,7 @@ import Tools32 from "/assets/tools/djithermal.png";
 import Tools33 from "/assets/tools/terra.jpeg";
 import Tools34 from "/assets/tools/gitlab.png";
 import Tools35 from "/assets/tools/raspberrypi.png";
+import Tools36 from "/assets/tools/cloudflare.png";
 
 
 // --- IMPORTAZIONE LOGHI CERTIFICATI (Icone Griglia) ---
@@ -89,7 +90,8 @@ export const listTools = [
   { id: 32, gambar: Tools32, nama: "DJI Thermal",           ket: "Thermal Analysis Software",       dad: "2900", done: true, desc: "Thermal imaging analysis software used to process, measure, and analyze radiometric thermal images captured by drone payloads." },
   { id: 33, gambar: Tools33, nama: "DJI Terra",             ket: "Photogrammetry & Mapping",        dad: "3000", done: true, desc: "3D model reconstruction software that takes photogrammetry to the next level for mapping, surveying, and infrastructure inspection." },
   { id: 34, gambar: Tools34, nama: "GitLab",                ket: "Repository & CI/CD",              dad: "3100", done: true, desc: "DevOps platform used for issue boards, merge requests and GitLab CI/CD pipelines for automated build, test and deploy." },
-  { id: 35, gambar: Tools35, nama: "Raspberry Pi Pico W",   ket: "Embedded Hardware",               dad: "3200", done: true, desc: "RP2040 microcontroller board with WiFi, programmed in C with the Pico SDK for sensor acquisition (I2C), MQTT communication and embedded debugging." },
+  { id: 35, gambar: Tools35, nama: "Raspberry Pi Pico W",   ket: "Embedded Hardware",               dad: "3200", done: true, cv: false, desc: "RP2040 microcontroller board with WiFi, programmed in C with the Pico SDK for sensor acquisition (I2C), MQTT communication and embedded debugging." },
+  { id: 36, gambar: Tools36, nama: "Cloudflare",            ket: "Hosting, CDN & Edge",             dad: "3300", done: true, desc: "Cloud platform used to host web apps on Cloudflare Pages, with Workers, R2 storage, DNS and CDN for fast and secure delivery." },
 ];
 
 // --- SEZIONE PROGETTI ---
