@@ -15,7 +15,7 @@ const OUT = path.join(root, 'public/assets/Alessio_Gervasini_CV.pdf');
 const CHROME = process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 
 // ── fixed parts of the CV (not in data.js) ──
-const ABOUT = 'Co-Founder SolarDino | Passionate about Artificial Intelligence. Beyond a strong interest in image recognition and object detection.';
+const ABOUT = 'Co-Founder SolarDino.it | Passionate about Artificial Intelligence. Beyond a strong interest in image recognition and object detection.';
 const HOBBIES = ['Volleyball', 'Reading AI Papers', 'Pilot & Developer DJI', 'Object Detection'];
 const EDUCATION = [
   { title: 'Master in Machine Learning (ongoing)', years: '2026 - 2028', school: 'SUPSI · Lugano, Zurich (CH)' },
