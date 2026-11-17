@@ -103,7 +103,7 @@ h1 .b{display:block;font-weight:700;font-size:38pt;letter-spacing:.3pt}
 
 <h1 class="abs"><span class="a">ALESSIO</span><span class="b">GERVASINI</span></h1>
 <div class="abs head2">
-  <div class="title">Computer Vision Specialist</div>
+  <div class="title">AI and Computer Vision Specialist</div>
 </div>
 
 <div class="side">
