@@ -157,6 +157,7 @@ export const listProyek = [
     title: "Image Super Resolution",
     subtitle: "A Deep Learning model designed to upscale and enhance image quality...",
     fullDescription: "This project explores advanced Deep Learning architectures for Single Image Super-Resolution (SISR).",
+    cvDescription: "Advanced Deep Learning architectures for Single Image Super-Resolution (SISR).",
     anno: "2026",
     borderColor: "#8B5CF6",
     gradient: "linear-gradient(145deg, #8B5CF6, #000)",
