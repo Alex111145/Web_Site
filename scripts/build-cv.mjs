@@ -66,7 +66,7 @@ a{color:inherit;text-decoration:none}
 h1{left:36pt;top:46pt;font-family:'Outfit',sans-serif;color:var(--navy);line-height:1.02}
 h1 .a{display:block;font-weight:300;font-size:36pt;letter-spacing:.5pt}
 h1 .b{display:block;font-weight:700;font-size:38pt;letter-spacing:.3pt}
-.head2{left:36pt;top:140pt;width:270pt;text-align:center}
+.head2{left:36pt;top:145pt;width:270pt;text-align:center}
 .title{font-size:15pt;color:#111827;font-weight:400}
 .sub{font-size:8.6pt;color:#6b7280;letter-spacing:.5pt;margin-top:1.5pt}
 .side h3{font-family:'Outfit',sans-serif;font-weight:700;font-size:14pt;letter-spacing:1.4pt;color:#fff;line-height:1.2}
@@ -104,7 +104,6 @@ h1 .b{display:block;font-weight:700;font-size:38pt;letter-spacing:.3pt}
 <h1 class="abs"><span class="a">ALESSIO</span><span class="b">GERVASINI</span></h1>
 <div class="abs head2">
   <div class="title">Computer Vision Specialist</div>
-  <div class="sub">Machine Learning · Computer Vision</div>
 </div>
 
 <div class="side">
