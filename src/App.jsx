@@ -20,16 +20,12 @@ function App() {
   const [selectedTool, setSelectedTool] = useState(null);
   const [contactType, setContactType] = useState(null);
 
-  // Download CV dinamico (PDF compilato con tools, certificazioni e progetti)
+  // Download CV: PDF generated from data.js by scripts/build-cv.mjs (npm run cv, also in deploy)
   const handleDownloadCV = async () => {
-    const { generateFilledCV } = await import("./components/CVDocument/CVFiller");
-    const blob = await generateFilledCV();
-    const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
-    a.href = url;
+    a.href = `${import.meta.env.BASE_URL}assets/Alessio_Gervasini_CV.pdf`;
     a.download = "Alessio_Gervasini_CV.pdf";
     a.click();
-    URL.revokeObjectURL(url);
   };
 
   // Comparsa allo scroll per gli elementi con data-reveal
