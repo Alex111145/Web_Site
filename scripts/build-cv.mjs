@@ -1,5 +1,5 @@
 // Builds public/assets/Alessio_Gervasini_CV.pdf (blue v3 design) from src/data.js.
-// Skills = tools with done:true and cv !== false, certifications = the ones with a certImage,
+// Skills = tools with done:true and cv !== false, certifications = the ones with a certImage or cv:true (cvAnno/cvSortYear override),
 // projects = listProyek (cvDescription, or fullDescription when missing).
 // Rendered with the local Google Chrome (headless print to PDF).
 // Usage: npm run cv   (also runs inside npm run deploy)
@@ -16,7 +16,7 @@ const CHROME = process.env.CHROME_PATH || '/Applications/Google Chrome.app/Conte
 
 // ── fixed parts of the CV (not in data.js) ──
 const ABOUT = 'Co-Founder SolarDino | Passionate about Artificial Intelligence. Beyond a strong interest in image recognition and object detection.';
-const HOBBIES = ['Volleyball', 'Reading AI Papers', 'DJI Pilot & Developer'];
+const HOBBIES = ['Volleyball', 'Reading AI Papers', 'Pilot & Developer DJI'];
 const EDUCATION = [
   { title: 'Master in Machine Learning (ongoing)', years: '2026 - 2028', school: 'SUPSI, Lugano and Zurich · currently attending' },
   { title: 'Bachelor of Computer Science', years: '2023 - 2026', school: 'University of Insubria' },
@@ -36,8 +36,8 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 
 const skills = listTools.filter((t) => t.done && t.cv !== false).map((t) => t.nama).sort((a, b) => b.length - a.length);
 const certs = listCertifications
-  .filter((c) => c.certImage !== null)
-  .sort((a, b) => Number(b.anno) - Number(a.anno));
+  .filter((c) => c.certImage !== null || c.cv === true)
+  .sort((a, b) => Number(b.cvSortYear ?? b.anno) - Number(a.cvSortYear ?? a.anno));
 const projects = listProyek.map((p) => ({ title: p.title, anno: p.anno, text: p.cvDescription || p.fullDescription }));
 
 // skills: 2 columns, long names on the left; rows shrink when the list grows (box 527pt → 723pt)
@@ -133,7 +133,7 @@ h1 .b{display:block;font-weight:700;font-size:38pt;letter-spacing:.3pt}
   </div>
   <div class="sec cert">
     <h2>Certification</h2>
-    <div class="list">${certs.map((c) => item(c.nama, c.anno)).join('')}</div>
+    <div class="list">${certs.map((c) => item(c.nama, c.cvAnno ?? c.anno)).join('')}</div>
   </div>
   <div class="sec">
     <h2>Education</h2>
