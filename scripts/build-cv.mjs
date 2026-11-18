@@ -83,7 +83,7 @@ h1 .b{display:block;font-weight:700;font-size:38pt;letter-spacing:.3pt}
 .skills span:before,.hob span:before{content:"";position:absolute;left:0;top:calc(50% - 1.8pt);width:3.6pt;height:3.6pt;border-radius:50%;background:var(--dot);box-shadow:0 0 0 .7pt rgba(219,234,254,.35)}
 .hob{left:25pt;top:756pt;width:195pt;display:grid;grid-template-columns:115pt 80pt;grid-auto-rows:14pt;font-size:7.6pt;color:#fff}
 .priv{left:14pt;top:797pt;width:198pt;text-align:center;font-size:6.2pt;line-height:1.4;color:#c3cfdf}
-.right{left:231.6pt;top:277.7pt;right:0;bottom:16pt;display:flex;flex-direction:column;justify-content:space-between}
+.right{left:231.6pt;top:253.5pt;right:0;bottom:16pt;display:flex;flex-direction:column;justify-content:space-between}
 .sec h2{position:relative;height:24.3pt;margin-right:-30pt;border:1.3pt solid var(--pill);border-radius:12.2pt;padding-left:9pt;font-family:'Outfit',sans-serif;font-weight:700;font-size:14pt;letter-spacing:1.5pt;color:var(--navy);line-height:22pt;box-shadow:inset 0 -.6pt 0 #e3e9ed}
 .list{padding:9pt 40.3pt 0 6.4pt;zoom:var(--k)}
 .item{position:relative;padding-left:12pt;margin-bottom:6.5pt}
