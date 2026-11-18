@@ -72,7 +72,7 @@ h1 .b{display:block;font-weight:700;font-size:38pt;letter-spacing:.3pt}
 .sub{font-size:7.6pt;color:#6b7280;letter-spacing:0;margin:3pt -40pt 0;font-style:italic;white-space:nowrap;line-height:1.35}
 .side h3{font-family:'Outfit',sans-serif;font-weight:700;font-size:14pt;letter-spacing:1.4pt;color:#fff;line-height:1.2}
 .about{left:25.3pt;top:258pt;width:192pt;font-size:8.2pt;color:#eef3f9}
-.sd{left:25.3pt;top:474pt;width:192pt;font-size:8pt;line-height:1.4;color:#eef3f9}
+.sd{left:21.7pt;top:478pt;width:192pt;font-size:8pt;line-height:1.4;color:#eef3f9}
 .c{left:21.5pt;width:200pt;display:flex;gap:9pt;align-items:center;font-size:7.4pt;color:#fff}
 .c i{flex:none;width:11pt;height:11pt;background:#fcfcfc;border-radius:1.5pt;display:flex;align-items:center;justify-content:center}
 .c svg{width:8pt;height:8pt;stroke:var(--navy);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
@@ -114,15 +114,17 @@ h1 .b{display:block;font-weight:700;font-size:38pt;letter-spacing:.3pt}
   <p class="abs about">${esc(ABOUT)}</p>
 
   <h3 class="abs" style="left:21.7pt;top:307pt">Contact</h3>
-  <div class="abs c" style="top:337pt"><i><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></i><a href="tel:+393483476847">+39 348 347 68 47</a></div>
-  <div class="abs c" style="top:358pt"><i><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v6M8 7.5v.01M12 17v-6M12 13a3 3 0 0 1 6 0v4"/></svg></i><a href="https://www.linkedin.com/in/891740368">https://www.linkedin.com/in/891740368</a></div>
-  <div class="abs c" style="top:379pt"><i><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></i><a href="mailto:agervasini1@gmail.com">agervasini1@gmail.com</a></div>
-  <div class="abs c" style="top:400pt"><i><svg viewBox="0 0 24 24"><path d="M8 18l-5-6 5-6M16 6l5 6-5 6"/></svg></i><a href="https://github.com/Alex111145">https://github.com/Alex111145</a></div>
-  <div class="abs c" style="top:421pt"><i><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></i><a href="https://alessiogervasini.pages.dev">https://alessiogervasini.pages.dev</a></div>
+  <div class="abs c" style="top:336pt"><i><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></i><span>Varese (Italy)</span></div>
+  <div class="abs c" style="top:336pt;left:128pt;width:94pt"><i><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></i><span>Born in 2004</span></div>
+  <div class="abs c" style="top:354.5pt"><i><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></i><a href="tel:+393483476847">+39 348 347 68 47</a></div>
+  <div class="abs c" style="top:373pt"><i><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v6M8 7.5v.01M12 17v-6M12 13a3 3 0 0 1 6 0v4"/></svg></i><a href="https://www.linkedin.com/in/891740368">https://www.linkedin.com/in/891740368</a></div>
+  <div class="abs c" style="top:391.5pt"><i><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></i><a href="mailto:agervasini1@gmail.com">agervasini1@gmail.com</a></div>
+  <div class="abs c" style="top:410pt"><i><svg viewBox="0 0 24 24"><path d="M8 18l-5-6 5-6M16 6l5 6-5 6"/></svg></i><a href="https://github.com/Alex111145">https://github.com/Alex111145</a></div>
+  <div class="abs c" style="top:428.5pt"><i><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></i><a href="https://alessiogervasini.pages.dev">https://alessiogervasini.pages.dev</a></div>
 
-  <h3 class="abs" style="left:21.7pt;top:445pt">SolarDino</h3>
+  <h3 class="abs" style="left:21.7pt;top:449pt">SolarDino</h3>
   <div class="abs sd">${esc(SOLARDINO.text)}</div>
-  <div class="abs c" style="top:500pt"><i><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></i><a href="${SOLARDINO.url}">${esc(SOLARDINO.url)}</a></div>
+  <div class="abs c" style="top:504pt"><i><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></i><a href="${SOLARDINO.url}">${esc(SOLARDINO.url)}</a></div>
 
   <h3 class="abs" style="left:25.3pt;top:525pt">Skills</h3>
   <div class="abs skills">${skills.map((s) => `<span>${esc(s)}</span>`).join('')}</div>
