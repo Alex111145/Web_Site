@@ -87,7 +87,7 @@ const Hero = ({ onDownloadCV }) => {
           </div>
         </div>
 
-        <ul className="hero-in mt-16 md:mt-20 pt-5 border-t border-line grid gap-2 md:grid-cols-3 font-mono text-xs uppercase tracking-[0.06em] text-muted" style={{ "--d": "420ms" }}>
+        <ul className="hero-in mt-8 md:mt-10 pt-5 border-t border-line grid gap-2 md:grid-cols-3 font-mono text-xs uppercase tracking-[0.06em] text-muted" style={{ "--d": "420ms" }}>
           {facts.map((f) => (
             <li key={f}>{f}</li>
           ))}
